@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.broker.server.store.mongo.domain;
+package io.github.kingsilk.wx4j.broker.server.store.mongo.domain;
 
 /**
  * 微信号类型。
@@ -11,24 +11,12 @@ public enum WxTicketTypeEnum {
     PROXY_USER("PROXY", "公众号第三方平台代替授权方获取 User 授权的 Access Token");
 
 
-    private final String code;
-    private final String desp;
+    final String code;
+    final String desp;
 
     WxTicketTypeEnum(String code, String desp) {
         this.code = code;
         this.desp = desp;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getDesp() {
-        return desp;
-    }
-
-    public final String getDescription() {
-        return desp;
     }
 
 }

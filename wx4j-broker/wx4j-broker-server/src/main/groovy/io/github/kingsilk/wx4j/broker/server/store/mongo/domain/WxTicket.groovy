@@ -1,10 +1,10 @@
-package io.github.btpka3.wx4j.broker.server.store.mongo.domain
+package io.github.kingsilk.wx4j.broker.server.store.mongo.domain
 
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.DBRef
 
 /**
- * Created by zll on 26/05/2017.
+ *
  */
 class WxTicket extends Base {
 

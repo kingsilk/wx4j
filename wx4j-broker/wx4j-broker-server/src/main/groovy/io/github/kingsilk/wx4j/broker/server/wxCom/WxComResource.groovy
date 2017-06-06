@@ -1,9 +1,9 @@
-package io.github.btpka3.wx4j.broker.server.resource.wxCom
+package io.github.kingsilk.wx4j.broker.server.wxCom
 
 import groovy.util.logging.Slf4j
-import io.github.btpka3.wx4j.broker.api.WxCom
-import io.github.btpka3.wx4j.broker.api.model.WxComResiterResp
-import io.github.btpka3.wx4j.broker.server.store.WxAppStore
+import io.github.kingsilk.wx4j.broker.api.model.WxCom
+import io.github.kingsilk.wx4j.broker.api.model.WxComResiterResp
+import io.github.kingsilk.wx4j.broker.server.store.WxAppStore
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiParam
 import org.springframework.stereotype.Component

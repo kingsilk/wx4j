@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.broker.server.store.mongo.domain
+package io.github.kingsilk.wx4j.broker.server.store.mongo.domain
 
 /**
  * 微信号类型。
@@ -22,31 +22,18 @@ public enum WxAppTypeEnum {
      * <p>
      * https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1453779503&token=&lang=zh_CN
      */
-    COM("COM", "微信公众号第三方平台"),
+            COM("COM", "微信公众号第三方平台"),
 
     /**
      * https://qy.weixin.qq.com/app
      */
-    CORP("CORP","微信企业号第三方服务")
+            CORP("CORP", "微信企业号第三方服务")
 
-    private final String code;
-    private final String desp;
+    final String code;
+    final String desp;
 
     WxAppTypeEnum(String code, String desp) {
         this.code = code;
         this.desp = desp;
     }
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getDesp() {
-        return desp;
-    }
-
-    public final String getDescription() {
-        return desp;
-    }
-
 }

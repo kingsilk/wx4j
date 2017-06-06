@@ -1,10 +1,7 @@
-package io.github.btpka3.wx4j.broker.server.store.mongo.domain
+package io.github.kingsilk.wx4j.broker.server.store.mongo.domain
 
-import org.springframework.data.annotation.*;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.Date;
-import java.util.Objects;
+import org.springframework.data.annotation.*
+import org.springframework.data.mongodb.core.mapping.Document
 
 /**
  * 数据库表结构的基础设计。
@@ -44,7 +41,7 @@ public abstract class Base {
     /**
      * 是否已经逻辑删除
      */
-    protected boolean deleted;
+    protected Boolean deleted;
 
     // --------------------------------------- equals && hashCode
 
@@ -60,7 +57,6 @@ public abstract class Base {
     public int hashCode() {
         return Objects.hash(id);
     }
-
 
     // --------------------------------------- getter && setter
 
