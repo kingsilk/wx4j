@@ -1,7 +1,7 @@
-package io.github.btpka3.wx4j.com
+package io.github.kingsilk.wx4j.com
 
 import groovy.json.JsonOutput
-import io.github.btpka3.wx4j.core.WxApi
+import io.github.kingsilk.wx4j.core.WxApi
 import org.springframework.util.Assert;
 
 /**

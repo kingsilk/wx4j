@@ -1,9 +1,9 @@
-package io.github.btpka3.wx4j.com.api
+package io.github.kingsilk.wx4j.com.api
 
 import groovy.transform.CompileStatic
-import io.github.btpka3.wx4j.com.WxComApi
-import io.github.btpka3.wx4j.com.WxComApi.BaseReq
-import io.github.btpka3.wx4j.com.WxComApi.BaseResp
+import io.github.kingsilk.wx4j.com.WxComApi
+import io.github.kingsilk.wx4j.com.WxComApi.BaseReq
+import io.github.kingsilk.wx4j.com.WxComApi.BaseResp
 
 /**
  *

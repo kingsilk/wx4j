@@ -1,9 +1,9 @@
-package io.github.btpka3.wx4j.pay.api
+package io.github.kingsilk.wx4j.pay.api
 
 import groovy.transform.CompileStatic
-import io.github.btpka3.wx4j.mp.WxMpApi
-import io.github.btpka3.wx4j.pay.WxPayApi.BaseReq
-import io.github.btpka3.wx4j.pay.WxPayApi.BaseResp
+import io.github.kingsilk.wx4j.mp.WxMpApi
+import io.github.kingsilk.wx4j.pay.WxPayApi.BaseReq
+import io.github.kingsilk.wx4j.pay.WxPayApi.BaseResp
 
 /**
  * 对账单相关API

@@ -1,0 +1,35 @@
+package io.github.kingsilk.wx4j.client.mp.push.reply
+
+import io.github.kingsilk.wx4j.client.mp.push.ReplyMsg
+
+/**
+ * 回复视频消息
+ */
+class VedioReplyMsg implements ReplyMsg {
+
+    String ToUserName
+    String FromUserName
+    Long CreateTime
+    final String MsgType = "video"
+
+    Video Video
+
+    public static class Video {
+
+        /**
+         * 通过素材管理接口上传多媒体文件，得到的id
+         */
+        String MediaId
+
+        /**
+         * 视频消息的标题
+         */
+        String Title
+
+        /**
+         * 视频消息的描述
+         */
+        String Description
+    }
+
+}

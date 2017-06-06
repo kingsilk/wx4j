@@ -1,13 +1,11 @@
-package io.github.btpka3.wx4j.mp.api.impl
+package io.github.kingsilk.wx4j.mp.api.impl
 
-import io.github.btpka3.wx4j.mp.api.AppAtApi
+import io.github.kingsilk.wx4j.mp.api.AppAtApi
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert
 import org.springframework.web.client.RestOperations
 import org.springframework.web.util.UriComponentsBuilder
-
-import static io.github.btpka3.wx4j.mp.api.AppAtApi.GetAppAtResp
 
 /**
  *

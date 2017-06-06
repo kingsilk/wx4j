@@ -1,9 +1,9 @@
-package io.github.btpka3.wx4j.mp.api.impl
+package io.github.kingsilk.wx4j.mp.api.impl
 
-import io.github.btpka3.wx4j.mp.api.UserAtApi
-import io.github.btpka3.wx4j.mp.api.UserAtApi.GetUserAtResp
-import io.github.btpka3.wx4j.mp.api.UserAtApi.IsValidResp
-import io.github.btpka3.wx4j.mp.api.UserAtApi.RefreshResp
+import io.github.kingsilk.wx4j.mp.api.UserAtApi
+import io.github.kingsilk.wx4j.mp.api.UserAtApi.GetUserAtResp
+import io.github.kingsilk.wx4j.mp.api.UserAtApi.IsValidResp
+import io.github.kingsilk.wx4j.mp.api.UserAtApi.RefreshResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert

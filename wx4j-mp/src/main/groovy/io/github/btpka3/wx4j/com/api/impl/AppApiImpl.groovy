@@ -1,12 +1,12 @@
-package io.github.btpka3.wx4j.com.api.impl
+package io.github.kingsilk.wx4j.com.api.impl
 
-import io.github.btpka3.wx4j.com.api.AppApi
-import io.github.btpka3.wx4j.com.api.AppApi.GetOptionReq
-import io.github.btpka3.wx4j.com.api.AppApi.GetOptionResp
-import io.github.btpka3.wx4j.com.api.AppApi.InfoReq
-import io.github.btpka3.wx4j.com.api.AppApi.InfoResp
-import io.github.btpka3.wx4j.com.api.AppApi.SetOptionReq
-import io.github.btpka3.wx4j.com.api.AppApi.SetOptionResp
+import io.github.kingsilk.wx4j.com.api.AppApi
+import io.github.kingsilk.wx4j.com.api.AppApi.GetOptionReq
+import io.github.kingsilk.wx4j.com.api.AppApi.GetOptionResp
+import io.github.kingsilk.wx4j.com.api.AppApi.InfoReq
+import io.github.kingsilk.wx4j.com.api.AppApi.InfoResp
+import io.github.kingsilk.wx4j.com.api.AppApi.SetOptionReq
+import io.github.kingsilk.wx4j.com.api.AppApi.SetOptionResp
 import org.springframework.http.*
 import org.springframework.util.Assert
 import org.springframework.web.client.RestOperations

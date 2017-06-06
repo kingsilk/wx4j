@@ -1,8 +1,8 @@
-package io.github.btpka3.wx4j.com.api.impl
+package io.github.kingsilk.wx4j.com.api.impl
 
-import io.github.btpka3.wx4j.com.api.ComAtApi
-import io.github.btpka3.wx4j.com.api.ComAtApi.GetComAtReq
-import io.github.btpka3.wx4j.com.api.ComAtApi.GetComAtResp
+import io.github.kingsilk.wx4j.com.api.ComAtApi
+import io.github.kingsilk.wx4j.com.api.ComAtApi.GetComAtReq
+import io.github.kingsilk.wx4j.com.api.ComAtApi.GetComAtResp
 import org.springframework.http.*
 import org.springframework.util.Assert
 import org.springframework.web.client.RestOperations

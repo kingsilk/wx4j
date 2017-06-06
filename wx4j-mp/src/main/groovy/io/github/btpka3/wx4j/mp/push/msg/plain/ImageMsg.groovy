@@ -1,6 +1,6 @@
-package io.github.btpka3.wx4j.mp.push.msg.plain
+package io.github.kingsilk.wx4j.mp.push.msg.plain
 
-import io.github.btpka3.wx4j.mp.push.msg.PlainMsg
+import io.github.kingsilk.wx4j.mp.push.msg.PlainMsg
 
 /**
  *

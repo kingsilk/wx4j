@@ -1,8 +1,8 @@
-package io.github.btpka3.wx4j.pay.api
+package io.github.kingsilk.wx4j.pay.api
 
-import io.github.btpka3.wx4j.pay.WxPayApi
-import io.github.btpka3.wx4j.pay.WxPayApi.BaseReq
-import io.github.btpka3.wx4j.pay.WxPayApi.BaseResp
+import io.github.kingsilk.wx4j.pay.WxPayApi
+import io.github.kingsilk.wx4j.pay.WxPayApi.BaseReq
+import io.github.kingsilk.wx4j.pay.WxPayApi.BaseResp
 
 /**
  *  红包相关API

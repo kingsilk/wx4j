@@ -1,8 +1,8 @@
-package io.github.btpka3.wx4j.qy.api
+package io.github.kingsilk.wx4j.qy.api
 
-import io.github.btpka3.wx4j.qy.WxQyApi
-import io.github.btpka3.wx4j.qy.WxQyApi.BaseReq
-import io.github.btpka3.wx4j.qy.WxQyApi.BaseResp
+import io.github.kingsilk.wx4j.qy.WxQyApi
+import io.github.kingsilk.wx4j.qy.WxQyApi.BaseReq
+import io.github.kingsilk.wx4j.qy.WxQyApi.BaseResp
 
 /**
  *

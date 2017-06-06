@@ -1,10 +1,10 @@
-package io.github.btpka3.wx4j.com.api.impl
+package io.github.kingsilk.wx4j.com.api.impl
 
-import io.github.btpka3.wx4j.com.api.AppAtApi
-import io.github.btpka3.wx4j.com.api.AppAtApi.GetAppAtReq
-import io.github.btpka3.wx4j.com.api.AppAtApi.GetAppAtResp
-import io.github.btpka3.wx4j.com.api.AppAtApi.PreAuthReq
-import io.github.btpka3.wx4j.com.api.AppAtApi.PreAuthResp
+import io.github.kingsilk.wx4j.com.api.AppAtApi
+import io.github.kingsilk.wx4j.com.api.AppAtApi.GetAppAtReq
+import io.github.kingsilk.wx4j.com.api.AppAtApi.GetAppAtResp
+import io.github.kingsilk.wx4j.com.api.AppAtApi.PreAuthReq
+import io.github.kingsilk.wx4j.com.api.AppAtApi.PreAuthResp
 import org.springframework.http.*
 import org.springframework.util.Assert
 import org.springframework.web.client.RestOperations

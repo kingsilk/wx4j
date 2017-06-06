@@ -1,6 +1,6 @@
-package io.github.btpka3.wx4j.mp.push.msg.event
+package io.github.kingsilk.wx4j.mp.push.msg.event
 
-import io.github.btpka3.wx4j.mp.push.msg.EventMsg
+import io.github.kingsilk.wx4j.mp.push.msg.EventMsg
 
 /**
  * 扫码推事件且弹出“消息接收中”提示框的事件推送

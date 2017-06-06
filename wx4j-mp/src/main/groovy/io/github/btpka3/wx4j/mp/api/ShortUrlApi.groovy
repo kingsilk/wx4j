@@ -1,9 +1,9 @@
-package io.github.btpka3.wx4j.mp.api
+package io.github.kingsilk.wx4j.mp.api
 
 import groovy.transform.CompileStatic
-import io.github.btpka3.wx4j.mp.WxMpApi
-import io.github.btpka3.wx4j.mp.WxMpApi.BaseReq
-import io.github.btpka3.wx4j.mp.WxMpApi.BaseResp
+import io.github.kingsilk.wx4j.mp.WxMpApi
+import io.github.kingsilk.wx4j.mp.WxMpApi.BaseReq
+import io.github.kingsilk.wx4j.mp.WxMpApi.BaseResp
 
 /**
  * 长链接转短链接接口

@@ -1,6 +1,6 @@
-package io.github.btpka3.wx4j.mp.push.msg.event
+package io.github.kingsilk.wx4j.mp.push.msg.event
 
-import io.github.btpka3.wx4j.mp.push.msg.EventMsg
+import io.github.kingsilk.wx4j.mp.push.msg.EventMsg
 
 /**
  * 资质认证成功

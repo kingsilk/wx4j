@@ -1,7 +1,7 @@
-package io.github.btpka3.wx4j.qy.api.impl
+package io.github.kingsilk.wx4j.qy.api.impl
 
-import io.github.btpka3.wx4j.qy.api.JsApiTicketApi
-import io.github.btpka3.wx4j.qy.api.JsApiTicketApi.GetTicketResp
+import io.github.kingsilk.wx4j.qy.api.JsApiTicketApi
+import io.github.kingsilk.wx4j.qy.api.JsApiTicketApi.GetTicketResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert

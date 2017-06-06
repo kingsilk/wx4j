@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.com.push
+package io.github.kingsilk.wx4j.com.push
 
 /**
  * 推送的 component_verify_ticket

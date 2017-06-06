@@ -1,6 +1,6 @@
-package io.github.btpka3.wx4j.mp.push.msg.event
+package io.github.kingsilk.wx4j.mp.push.msg.event
 
-import io.github.btpka3.wx4j.mp.push.msg.EventMsg
+import io.github.kingsilk.wx4j.mp.push.msg.EventMsg
 
 /**
  * 名称认证失败（这时虽然客户端不打勾，但仍有接口权限）

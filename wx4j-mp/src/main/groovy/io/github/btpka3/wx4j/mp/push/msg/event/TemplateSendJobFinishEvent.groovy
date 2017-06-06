@@ -1,6 +1,6 @@
-package io.github.btpka3.wx4j.mp.push.msg.event
+package io.github.kingsilk.wx4j.mp.push.msg.event
 
-import io.github.btpka3.wx4j.mp.push.msg.EventMsg
+import io.github.kingsilk.wx4j.mp.push.msg.EventMsg
 
 /**
  * 在模版消息发送任务完成后，微信服务器会将是否送达成功作为通知

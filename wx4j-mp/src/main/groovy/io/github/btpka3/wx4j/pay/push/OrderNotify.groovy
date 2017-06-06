@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.pay.push
+package io.github.kingsilk.wx4j.pay.push
 
 /**
  *

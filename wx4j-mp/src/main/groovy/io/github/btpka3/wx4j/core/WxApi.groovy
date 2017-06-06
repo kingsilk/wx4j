@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.core
+package io.github.kingsilk.wx4j.core
 
 /**
  *
