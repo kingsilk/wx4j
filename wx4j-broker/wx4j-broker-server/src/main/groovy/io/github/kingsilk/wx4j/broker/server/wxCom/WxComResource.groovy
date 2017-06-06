@@ -1,7 +1,7 @@
 package io.github.kingsilk.wx4j.broker.server.wxCom
 
 import groovy.util.logging.Slf4j
-import io.github.kingsilk.wx4j.broker.api.model.WxCom
+import io.github.kingsilk.wx4j.broker.api.WxCom
 import io.github.kingsilk.wx4j.broker.api.model.WxComResiterResp
 import io.github.kingsilk.wx4j.broker.server.store.WxAppStore
 import io.swagger.annotations.Api

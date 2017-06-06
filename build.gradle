@@ -22,8 +22,7 @@ allprojects {
     apply plugin: 'idea'
     apply plugin: "io.spring.dependency-management"
     apply plugin: 'project-report'
-    apply plugin: 'java'
-    apply plugin: 'maven'
+
 //    apply plugin: "com.gorylenko.gradle-git-properties"
 
     repositories {
@@ -96,47 +95,15 @@ allprojects {
 
             dependency('org.slf4j:slf4j-api:1.7.24')
             dependency('org.codehaus.groovy:groovy-json:2.4.9')
-            dependency('com.github.cage:cage:1.0')
+//            dependency('com.github.cage:cage:1.0')
         }
     }
-
-
-
-    task sourcesJar(type: Jar, dependsOn: classes) {
-        classifier = 'sources'
-        from sourceSets.main.allSource
-    }
-
-//    task javadocJar(type: Jar, dependsOn: javadoc) {
-//        classifier = 'javadoc'
-//        from javadoc.destinationDir
-//    }
-
-    artifacts {
-        archives sourcesJar
-        //archives javadocJar
-    }
-
-    uploadArchives {
-        dependsOn assemble
-        repositories {
-            mavenDeployer {
-                repository(url: "http://mvn.kingsilk.xyz/content/repositories/releases/") {
-                    authentication(userName: "admin", password: "admin123")
-                }
-                snapshotRepository(url: "http://mvn.kingsilk.xyz/content/repositories/snapshots/") {
-                    authentication(userName: "admin", password: "admin123")
-                }
-                //pom.version = "0.1.0-SNAPSHOT"
-                //pom.artifactId = "simple-project"
-                //pom.groupId = "com.example"
-            }
-        }
-    }
-
 }
 
 subprojects {
+    apply plugin: 'java'
+//    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
     apply plugin: 'org.springframework.boot'
 
     bootRun {
@@ -155,4 +122,81 @@ subprojects {
     dependencies {
 
     }
+
+    task sourcesJar(type: Jar ) {
+        classifier = 'sources'
+//        from sourceSets.main.allJava
+        from sourceSets.main.allSource
+    }
+
+//    task sourcesJar(type: Jar, dependsOn: classes) {
+//        classifier = 'sources'
+//        from sourceSets.main.allSource
+//    }
+
+//    task javadocJar(type: Jar, dependsOn: javadoc) {
+//        classifier = 'javadoc'
+//        from javadoc.destinationDir
+//    }
+
+//    artifacts {
+//        archives sourcesJar
+//        //archives javadocJar
+//    }
+
+//    uploadArchives {
+//        dependsOn assemble
+//        repositories {
+//            mavenDeployer {
+//                repository(url: "http://mvn.kingsilk.xyz/content/repositories/releases/") {
+//                    authentication(userName: "admin", password: "admin123")
+//                }
+//                snapshotRepository(url: "http://mvn.kingsilk.xyz/content/repositories/snapshots/") {
+//                    authentication(userName: "admin", password: "admin123")
+//                }
+////                pom.version = "0.1.0-SNAPSHOT"
+////                pom.artifactId = "simple-project"
+////                pom.groupId = "com.example"
+//            }
+//        }
+//    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+
+                // 追加 额外的 压缩包
+                artifact sourcesJar {
+                    classifier "sources"
+                }
+
+                pom.withXml {
+                    asNode().appendNode('description',
+                            'A demonstration of maven POM customization')
+                }
+            }
+        }
+        repositories {
+            maven {
+                credentials {
+                    username "admin"
+                    password "admin123"
+                }
+                if(project.version.endsWith('-SNAPSHOT')) {
+                    url "http://mvn.kingsilk.xyz/content/repositories/snapshots/"
+                } else {
+                    url "http://mvn.kingsilk.xyz/content/repositories/releases/"
+                }
+            }
+        }
+    }
+
+
+
+//    model {
+//        tasks.generatePomFileForMavenCustomPublication {
+//            destination = file("$buildDir/generated-pom.xml")
+//        }
+//    }
 }

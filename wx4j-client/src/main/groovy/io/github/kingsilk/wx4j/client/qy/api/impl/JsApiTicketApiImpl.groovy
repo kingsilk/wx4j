@@ -11,10 +11,13 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class JsApiTicketApiImpl implements JsApiTicketApi {
-
+class JsApiTicketApiImpl extends AbstractWxYqApi implements JsApiTicketApi {
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            getTicket: API_URL_getTicket
+    ])
 
     JsApiTicketApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate

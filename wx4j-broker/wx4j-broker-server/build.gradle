@@ -1,7 +1,7 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile project(":wx4j-broker/wx4j-broker-api")
+    compile project(":wx4j-broker:wx4j-broker-api")
 
     compile('org.codehaus.groovy:groovy-all')
     compile('org.springframework.boot:spring-boot-starter-web')

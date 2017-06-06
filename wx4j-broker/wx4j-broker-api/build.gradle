@@ -35,6 +35,9 @@ dependencies {
 }
 
 test {
-    include 'me/test/**'
     testLogging.showStandardStreams = false
+}
+
+bootRepackage {
+    enabled = false
 }
