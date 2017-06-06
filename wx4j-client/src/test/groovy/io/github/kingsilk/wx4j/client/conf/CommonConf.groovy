@@ -1,7 +1,6 @@
-package io.github.btpka3.wx4j.mp.conf
+package io.github.kingsilk.wx4j.client.conf
 
 import groovy.transform.CompileStatic
-import io.github.btpka3.wx4j.mp.util.UtProps
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

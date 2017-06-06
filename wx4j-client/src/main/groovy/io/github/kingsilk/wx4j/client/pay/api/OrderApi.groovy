@@ -11,9 +11,9 @@ import io.github.kingsilk.wx4j.client.pay.WxPayApi.BaseResp
 @CompileStatic
 interface OrderApi extends WxMpApi {
 
-    String API_URI_create = "https://api.mch.weixin.qq.com/pay/unifiedorder"
-    String API_URI_close = "https://api.mch.weixin.qq.com/pay/closeorder"
-    String API_URI_query = "https://api.mch.weixin.qq.com/pay/orderquery"
+    String API_URL_create = "https://api.mch.weixin.qq.com/pay/unifiedorder"
+    String API_URL_close = "https://api.mch.weixin.qq.com/pay/closeorder"
+    String API_URL_query = "https://api.mch.weixin.qq.com/pay/orderquery"
 
     // ----------------------------------------------
 

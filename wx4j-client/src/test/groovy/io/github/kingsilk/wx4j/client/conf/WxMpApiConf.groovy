@@ -1,14 +1,14 @@
-package io.github.btpka3.wx4j.mp.conf
+package io.github.kingsilk.wx4j.client.conf
 
 import groovy.transform.CompileStatic
-import io.github.kingsilk.wx4j.mp.api.AppAtApi
-import io.github.kingsilk.wx4j.mp.api.JsApiTicketApi
-import io.github.kingsilk.wx4j.mp.api.SnsUserApi
-import io.github.kingsilk.wx4j.mp.api.UserAtApi
-import io.github.kingsilk.wx4j.mp.api.impl.AppAtApiImpl
-import io.github.kingsilk.wx4j.mp.api.impl.JsApiTicketApiImpl
-import io.github.kingsilk.wx4j.mp.api.impl.SnsUserApiImpl
-import io.github.kingsilk.wx4j.mp.api.impl.UserAtApiImpl
+import io.github.kingsilk.wx4j.client.mp.api.AppAtApi
+import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi
+import io.github.kingsilk.wx4j.client.mp.api.SnsUserApi
+import io.github.kingsilk.wx4j.client.mp.api.UserAtApi
+import io.github.kingsilk.wx4j.client.mp.api.impl.AppAtApiImpl
+import io.github.kingsilk.wx4j.client.mp.api.impl.JsApiTicketApiImpl
+import io.github.kingsilk.wx4j.client.mp.api.impl.SnsUserApiImpl
+import io.github.kingsilk.wx4j.client.mp.api.impl.UserAtApiImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.client.RestOperations

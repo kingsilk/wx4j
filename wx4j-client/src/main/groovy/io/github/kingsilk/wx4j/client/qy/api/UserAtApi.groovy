@@ -8,9 +8,9 @@ import io.github.kingsilk.wx4j.client.qy.WxQyApi.BaseResp
  */
 interface UserAtApi extends WxQyApi {
 
-    String API_URI_createAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
+    String API_URL_createAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
 
-    String API_URI_getUserAt = "https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo"
+    String API_URL_getUserAt = "https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo"
 
 
     String createAuthUrl(

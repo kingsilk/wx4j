@@ -24,7 +24,7 @@ class ComAtApiImpl implements ComAtApi {
 
 
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_getComAt)
+                .fromHttpUrl(API_URL_getComAt)
                 .build()
                 .toUri()
 

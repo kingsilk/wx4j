@@ -12,25 +12,50 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface MenuApi extends WxMpApi {
 
-    String API_URI_create = "https://api.weixin.qq.com/cgi-bin/menu/create"
-    String API_URI_createCustom = "https://api.weixin.qq.com/cgi-bin/menu/addconditional"
-    String API_URI_query = "https://api.weixin.qq.com/cgi-bin/menu/get"
-    String API_URI_queryAll = "https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info"
-    String API_URI_del = "https://api.weixin.qq.com/cgi-bin/menu/delete"
-    String API_URI_delCustom = "https://api.weixin.qq.com/cgi-bin/menu/delconditional"
-    String API_URI_testCustom = "https://api.weixin.qq.com/cgi-bin/menu/trymatch"
+    final String API_URL_create = "https://api.weixin.qq.com/cgi-bin/menu/create"
+    final String API_URL_createCustom = "https://api.weixin.qq.com/cgi-bin/menu/addconditional"
+    final String API_URL_query = "https://api.weixin.qq.com/cgi-bin/menu/get"
+    final String API_URL_queryAll = "https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info"
+    final String API_URL_del = "https://api.weixin.qq.com/cgi-bin/menu/delete"
+    final String API_URL_delCustom = "https://api.weixin.qq.com/cgi-bin/menu/delconditional"
+    final String API_URL_testCustom = "https://api.weixin.qq.com/cgi-bin/menu/trymatch"
 
-
+    // ----------------------------------------------
     CreateResp create(
             String access_token,
             CreateReq createReq
     )
 
+    static class CreateReq extends BaseReq {
+        /**
+         * 一级菜单按钮
+         */
+        List<Button> button
+    }
+
+    static class CreateResp extends BaseResp {
+    }
+
+    // ----------------------------------------------
     CreateCustomResp createCustom(
             String access_token,
             CreateCustomReq createCustomReq
     )
 
+    static class CreateCustomReq extends BaseReq {
+        /**
+         * 一级菜单按钮
+         */
+        List<Button> button
+
+        MatchRule matchrule
+    }
+
+    static class CreateCustomResp extends BaseResp {
+        String menuid
+    }
+
+    // ----------------------------------------------
     /**
      * 查询 自定义菜单。
      *
@@ -41,6 +66,25 @@ interface MenuApi extends WxMpApi {
             String access_token
     )
 
+    static class QueryResp extends BaseResp {
+        Menu menu
+
+        ConditionalMenu conditionalmenu
+
+        public static class Menu {
+            List<Button> button
+            String menuid
+        }
+
+        public static class ConditionalMenu {
+            List<Button> button
+
+            MatchRule matchrule
+            String menuid
+        }
+    }
+
+    // ----------------------------------------------
     /**
      * 获取自定义菜单配置
      *
@@ -63,20 +107,6 @@ interface MenuApi extends WxMpApi {
             String access_token
     )
 
-    DelResp del(
-            String access_token
-    )
-
-    DelCustomResp delCustom(
-            String access_token,
-            DelCustomReq DelCustomReq
-    )
-
-    TestCustomResp testCustom(
-            String access_token,
-            TestCustomReq TestCustomReq
-    )
-
     static class QueryAllResp extends BaseResp {
 
         Integer is_menu_open
@@ -87,6 +117,36 @@ interface MenuApi extends WxMpApi {
             List<Button> button
         }
     }
+
+    // ----------------------------------------------
+    DelResp del(
+            String access_token
+    )
+
+    static class DelResp extends BaseResp {
+
+    }
+
+    // ----------------------------------------------
+    DelCustomResp delCustom(
+            String access_token,
+            DelCustomReq DelCustomReq
+    )
+
+    static class DelCustomReq extends BaseReq {
+        String menuid
+    }
+
+    static class DelCustomResp extends BaseResp {
+
+    }
+
+    // ----------------------------------------------
+    TestCustomResp testCustom(
+            String access_token,
+            TestCustomReq TestCustomReq
+    )
+
 
     static class TestCustomReq extends BaseReq {
 
@@ -100,48 +160,6 @@ interface MenuApi extends WxMpApi {
         List<Button> button
     }
 
-
-    static class DelCustomReq extends BaseReq {
-        String menuid
-    }
-
-    static class DelCustomResp extends BaseResp {
-
-    }
-
-    static class DelResp extends BaseResp {
-
-    }
-
-    static class QueryResp extends BaseResp {
-        Menu menu
-
-        ConditionalMenu conditionalmenu
-
-        public static class Menu {
-            List<Button> button
-            String menuid
-        }
-
-        public static class ConditionalMenu {
-            List<Button> button
-
-            MatchRule matchrule
-            String menuid
-        }
-    }
-
-
-    static class CreateCustomReq extends BaseReq {
-        /**
-         * 一级菜单按钮
-         */
-        List<Button> button
-
-        MatchRule matchrule
-
-
-    }
 
     static class MatchRule {
         /**
@@ -173,20 +191,6 @@ interface MenuApi extends WxMpApi {
         String client_platform_type
 
         String language
-    }
-
-    static class CreateCustomResp extends BaseResp {
-        String menuid
-    }
-
-    static class CreateReq extends BaseReq {
-        /**
-         * 一级菜单按钮
-         */
-        List<Button> button
-    }
-
-    static class CreateResp extends BaseResp {
     }
 
 

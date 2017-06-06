@@ -11,8 +11,9 @@ import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 @CompileStatic
 interface ShortUrlApi extends WxMpApi {
 
-    String API_URI_shorten = "https://api.weixin.qq.com/cgi-bin/shorturl"
+    final String API_URL_shorten = "https://api.weixin.qq.com/cgi-bin/shorturl"
 
+    // ----------------------------------------------
     /**
      * 将一条长链接转成短链接
      */

@@ -1,8 +1,6 @@
-package io.github.btpka3.wx4j.mp
+package io.github.kingsilk.wx4j.client
 
-import io.github.btpka3.wx4j.mp.api.impl.AppAtImplTest
-import io.github.btpka3.wx4j.mp.api.impl.JsApiTicketApiImplTest
-import io.github.btpka3.wx4j.mp.api.impl.SnsUserApiImplTest
+import io.github.kingsilk.wx4j.client.mp.impl.SnsUserApiImplTest
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 

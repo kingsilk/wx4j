@@ -12,11 +12,11 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface KfSessionApi extends WxMpApi {
 
-    String API_URI_create = "https://api.weixin.qq.com/customservice/kfsession/create"
-    String API_URI_close = "https://api.weixin.qq.com/customservice/kfsession/close"
-    String API_URI_getByOpenId = "https://api.weixin.qq.com/customservice/kfsession/getsession"
-    String API_URI_listByKf = "https://api.weixin.qq.com/customservice/kfsession/getsessionlist"
-    String API_URI_getWaitList = "https://api.weixin.qq.com/customservice/kfsession/getwaitcase"
+    final String API_URL_create = "https://api.weixin.qq.com/customservice/kfsession/create"
+    final String API_URL_close = "https://api.weixin.qq.com/customservice/kfsession/close"
+    final String API_URL_getByOpenId = "https://api.weixin.qq.com/customservice/kfsession/getsession"
+    final String API_URL_listByKf = "https://api.weixin.qq.com/customservice/kfsession/getsessionlist"
+    final String API_URL_getWaitList = "https://api.weixin.qq.com/customservice/kfsession/getwaitcase"
 
     // ----------------------------------------------
     /**

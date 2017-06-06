@@ -11,17 +11,18 @@ import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 @CompileStatic
 interface CommentApi extends WxMpApi {
 
-    String API_URI_open = "https://api.weixin.qq.com/cgi-bin/comment/open"
-    String API_URI_close = "https://api.weixin.qq.com/cgi-bin/comment/close"
-    String API_URI_list = "https://api.weixin.qq.com/cgi-bin/comment/list"
-    String API_URI_mark = "https://api.weixin.qq.com/cgi-bin/comment/markelect"
-    String API_URI_unmark = "https://api.weixin.qq.com/cgi-bin/comment/unmarkelect"
-    String API_URI_del = "https://api.weixin.qq.com/cgi-bin/comment/delete"
+    final String API_URL_open = "https://api.weixin.qq.com/cgi-bin/comment/open"
+    final String API_URL_close = "https://api.weixin.qq.com/cgi-bin/comment/close"
+    final String API_URL_list = "https://api.weixin.qq.com/cgi-bin/comment/list"
+    final String API_URL_mark = "https://api.weixin.qq.com/cgi-bin/comment/markelect"
+    final String API_URL_unmark = "https://api.weixin.qq.com/cgi-bin/comment/unmarkelect"
+    final String API_URL_del = "https://api.weixin.qq.com/cgi-bin/comment/delete"
 
 
-    String API_URI_reply = "https://api.weixin.qq.com/cgi-bin/comment/reply/add"
-    String API_URI_delReply = "https://api.weixin.qq.com/cgi-bin/comment/reply/delete"
+    final String API_URL_reply = "https://api.weixin.qq.com/cgi-bin/comment/reply/add"
+    final String API_URL_delReply = "https://api.weixin.qq.com/cgi-bin/comment/reply/delete"
 
+    // ----------------------------------------------
     /**
      * 打开已群发文章评论
      */

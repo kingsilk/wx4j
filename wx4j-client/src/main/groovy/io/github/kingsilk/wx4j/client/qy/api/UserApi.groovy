@@ -9,9 +9,9 @@ import io.github.kingsilk.wx4j.client.qy.WxQyApi.BaseResp
  */
 interface UserApi extends WxQyApi {
 
-    String API_URI_info = "https://qyapi.weixin.qq.com/cgi-bin/user/getuserdetail"
-    String API_URI_userIdToOpenId = "https://qyapi.weixin.qq.com/cgi-bin/user/convert_to_openid"
-    String API_URI_openIdToUserId = "https://qyapi.weixin.qq.com/cgi-bin/user/convert_to_userid"
+    String API_URL_info = "https://qyapi.weixin.qq.com/cgi-bin/user/getuserdetail"
+    String API_URL_userIdToOpenId = "https://qyapi.weixin.qq.com/cgi-bin/user/convert_to_openid"
+    String API_URL_openIdToUserId = "https://qyapi.weixin.qq.com/cgi-bin/user/convert_to_userid"
 
     String info(
             String access_token,

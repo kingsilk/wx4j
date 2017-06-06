@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.mp.util
+package io.github.kingsilk.wx4j.client.util
 
 import groovy.transform.CompileStatic
 import groovy.transform.ToString

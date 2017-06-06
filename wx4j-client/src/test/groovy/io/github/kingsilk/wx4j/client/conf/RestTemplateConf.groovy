@@ -1,4 +1,4 @@
-package io.github.btpka3.wx4j.mp.conf
+package io.github.kingsilk.wx4j.client.conf
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import groovy.transform.CompileStatic

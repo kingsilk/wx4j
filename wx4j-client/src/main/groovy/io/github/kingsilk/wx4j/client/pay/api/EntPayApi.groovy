@@ -11,8 +11,8 @@ import io.github.kingsilk.wx4j.client.pay.WxPayApi.BaseResp
 @CompileStatic
 interface EntPayApi extends WxMpApi {
 
-    String API_URI_transfer = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers"
-    String API_URI_info = " \thttps://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo"
+    String API_URL_transfer = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers"
+    String API_URL_info = " \thttps://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo"
 
     // ----------------------------------------------
 

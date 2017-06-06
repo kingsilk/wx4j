@@ -15,12 +15,13 @@ import javax.xml.bind.annotation.XmlRootElement
 @CompileStatic
 interface MediaApi extends WxMpApi {
 
-    String API_URI_upload = "https://api.weixin.qq.com/cgi-bin/media/upload"
-    String API_URI_getTmp = "https://api.weixin.qq.com/cgi-bin/media/get"
-    String API_URI_uploadImg = "https://api.weixin.qq.com/cgi-bin/media/uploadimg"
-    String API_URI_uploadNews = "https://api.weixin.qq.com/cgi-bin/media/uploadnews"
-    String API_URI_uploadVideo = "https://api.weixin.qq.com/cgi-bin/media/uploadvideo"
+    final String API_URL_upload = "https://api.weixin.qq.com/cgi-bin/media/upload"
+    final String API_URL_getTmp = "https://api.weixin.qq.com/cgi-bin/media/get"
+    final String API_URL_uploadImg = "https://api.weixin.qq.com/cgi-bin/media/uploadimg"
+    final String API_URL_uploadNews = "https://api.weixin.qq.com/cgi-bin/media/uploadnews"
+    final String API_URL_uploadVideo = "https://api.weixin.qq.com/cgi-bin/media/uploadvideo"
 
+    // ----------------------------------------------
     /**
      * 新增临时素材
      *
@@ -36,6 +37,13 @@ interface MediaApi extends WxMpApi {
             Resource media
     )
 
+    static class UploadResp extends BaseResp {
+        String type
+        String media_id
+        Long created_at
+    }
+
+    // ----------------------------------------------
     /**
      * 获取临时素材
      */
@@ -44,61 +52,33 @@ interface MediaApi extends WxMpApi {
             String media_id
     )
 
-    /**
-     * 使用FORM表单上传图文消息内的图片获取URL
-     *
-     * @param access_token 调用接口凭证
-     * @param media form-data中媒体文件标识，有filename、filelength、content-type等信息
-     * @return
-     */
-    UploadImgResp uploadImg(
-            String access_token,
-            Resource media
-    )
-
-    UploadNewsResp uploadNews(
-            String access_token,
-            UploadNewsReq uploadNewsReq
-    )
-
-    /**
-     * 群发视频时，需要通过该接口获取 media_id
-     *
-     * @param access_token
-     * @param uploadVideoReq
-     * @return
-     */
-    UploadVideoResp uploadVideo(
-            String access_token, // FIXME
-            UploadVideoReq uploadVideoReq
-    )
-
-
     static class GetResp extends BaseResp {
         String type
         String media_id
         Long created_at
     }
 
-    static class UploadResp extends BaseResp {
-        String type
-        String media_id
-        Long created_at
+    // ----------------------------------------------
+    /**
+     * 使用FORM表单上传图文消息内的图片获取URL
+     *
+     * @param access_token 调用接口凭证
+     * @param media form-data中媒体文件标识，有filename、filelength、content-type等信息
+     */
+    UploadImgResp uploadImg(
+            String access_token,
+            Resource media
+    )
+
+    static class UploadImgResp extends BaseResp {
+        String url
     }
 
-    static class UploadVideoResp extends BaseResp {
-        String type
-        String media_id
-        Long created_at
-    }
-
-    static class UploadVideoReq extends BaseReq {
-        String media_id
-        String title
-        String description
-
-    }
-
+    // ----------------------------------------------
+    UploadNewsResp uploadNews(
+            String access_token,
+            UploadNewsReq uploadNewsReq
+    )
 
     static class UploadNewsReq extends BaseReq {
 
@@ -152,6 +132,21 @@ interface MediaApi extends WxMpApi {
              */
             Integer show_cover_pic
 
+            @XmlRootElement(name = "data-miniprogram-appid")
+            public static class MpMiniProgram {
+
+                @XmlAttribute(name = "data-miniprogram-appid")
+                String appid
+
+                @XmlAttribute(name = "data-miniprogram-path")
+                String path
+
+                @XmlAttribute(name = "data-miniprogram-title")
+                String title
+
+                @XmlAttribute(name = "data-miniprogram-imageurl")
+                String imageurl
+            }
 
         }
     }
@@ -173,24 +168,31 @@ interface MediaApi extends WxMpApi {
 
     }
 
-    static class UploadImgResp extends BaseResp {
-        String url
-    }
+    // ----------------------------------------------
+    /**
+     * 群发视频时，需要通过该接口获取 media_id
+     *
+     * @param access_token
+     * @param uploadVideoReq
+     * @return
+     */
+    UploadVideoResp uploadVideo(
+            String access_token, // FIXME
+            UploadVideoReq uploadVideoReq
+    )
 
-
-    @XmlRootElement(name = "data-miniprogram-appid")
-    static class MpMiniProgram {
-
-        @XmlAttribute(name = "data-miniprogram-appid")
-        String appid
-
-        @XmlAttribute(name = "data-miniprogram-path")
-        String path
-
-        @XmlAttribute(name = "data-miniprogram-title")
+    static class UploadVideoReq extends BaseReq {
+        String media_id
         String title
+        String description
 
-        @XmlAttribute(name = "data-miniprogram-imageurl")
-        String imageurl
     }
+
+    static class UploadVideoResp extends BaseResp {
+        String type
+        String media_id
+        Long created_at
+    }
+
+
 }

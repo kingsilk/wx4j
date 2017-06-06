@@ -13,13 +13,13 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface KfApi extends WxMpApi {
 
-    String API_URI_add = "https://api.weixin.qq.com/customservice/kfaccount/add"
-    String API_URI_invite = "https://api.weixin.qq.com/customservice/kfaccount/inviteworker"
-    String API_URI_del = "https://api.weixin.qq.com/customservice/kfaccount/del"
-    String API_URI_list = "https://api.weixin.qq.com/cgi-bin/customservice/getkflist"
-    String API_URI_listOnline = "https://api.weixin.qq.com/cgi-bin/customservice/getonlinekflistt"
-    String API_URI_update = "https://api.weixin.qq.com/customservice/kfaccount/update"
-    String API_URI_uploadHeadImg = "https://api.weixin.qq.com/customservice/kfaccount/uploadheadimg"
+    final String API_URL_add = "https://api.weixin.qq.com/customservice/kfaccount/add"
+    final String API_URL_invite = "https://api.weixin.qq.com/customservice/kfaccount/inviteworker"
+    final String API_URL_del = "https://api.weixin.qq.com/customservice/kfaccount/del"
+    final String API_URL_list = "https://api.weixin.qq.com/cgi-bin/customservice/getkflist"
+    final String API_URL_listOnline = "https://api.weixin.qq.com/cgi-bin/customservice/getonlinekflistt"
+    final String API_URL_update = "https://api.weixin.qq.com/customservice/kfaccount/update"
+    final String API_URL_uploadHeadImg = "https://api.weixin.qq.com/customservice/kfaccount/uploadheadimg"
 
     // ----------------------------------------------
     /**
@@ -65,7 +65,6 @@ interface KfApi extends WxMpApi {
 
     static class InviteResp extends BaseResp {
     }
-
 
     // ----------------------------------------------
     /**
@@ -138,7 +137,6 @@ interface KfApi extends WxMpApi {
              * 1 - web 在线
              */
             Integer status
-
 
             /**
              * 客服工号

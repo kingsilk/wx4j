@@ -11,8 +11,9 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface SnsUserApi extends WxMpApi {
 
-    String API_URI_info = "https://api.weixin.qq.com/sns/userinfo"
+    final String API_URL_info = "https://api.weixin.qq.com/sns/userinfo"
 
+    // ----------------------------------------------
     // lang = "zh_CN"
     /**
      * 获取用户的信息。

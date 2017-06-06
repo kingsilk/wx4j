@@ -12,11 +12,10 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface QRcodeApi extends WxMpApi {
 
-    String API_URI_createTicket = "https://api.weixin.qq.com/cgi-bin/qrcode/create"
-    String API_URI_getImgByTicket = "https://mp.weixin.qq.com/cgi-bin/showqrcode"
+    final String API_URL_createTicket = "https://api.weixin.qq.com/cgi-bin/qrcode/create"
+    final String API_URL_getImgByTicket = "https://mp.weixin.qq.com/cgi-bin/showqrcode"
 
     // ----------------------------------------------
-
     /**
      * 创建二维码ticket
      */
@@ -24,7 +23,6 @@ interface QRcodeApi extends WxMpApi {
             String access_token,
             CreateTicketReq createTicketReq
     )
-
 
     static abstract class CreateTicketReq extends BaseReq {
 
@@ -133,7 +131,6 @@ interface QRcodeApi extends WxMpApi {
     }
 
     // ----------------------------------------------
-
     /**
      * 通过ticket换取二维码
      */

@@ -14,75 +14,19 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface UserGroupApi extends WxMpApi {
 
-    String API_URI_create = "https://api.weixin.qq.com/cgi-bin/groups/create"
-    String API_URI_update = "https://api.weixin.qq.com/cgi-bin/groups/create"
-    String API_URI_del = "https://api.weixin.qq.com/cgi-bin/groups/delete"
-    String API_URI_list = "https://api.weixin.qq.com/cgi-bin/groups/get"
-    String API_URI_findByUser = "https://api.weixin.qq.com/cgi-bin/groups/get"
-    String API_URI_change = "https://api.weixin.qq.com/cgi-bin/groups/members/update"
-    String API_URI_batchChange = "https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate"
+    final String API_URL_create = "https://api.weixin.qq.com/cgi-bin/groups/create"
+    final String API_URL_update = "https://api.weixin.qq.com/cgi-bin/groups/create"
+    final String API_URL_del = "https://api.weixin.qq.com/cgi-bin/groups/delete"
+    final String API_URL_list = "https://api.weixin.qq.com/cgi-bin/groups/get"
+    final String API_URL_findByUser = "https://api.weixin.qq.com/cgi-bin/groups/get"
+    final String API_URL_change = "https://api.weixin.qq.com/cgi-bin/groups/members/update"
+    final String API_URL_batchChange = "https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate"
 
-
-    CreateResp create(String access_token, CreateReq createReq)
-
-    UpdateResp update(String access_token, UpdateReq createReq)
-
-    DelResp del(String access_token, DelReq delReq)
-
-    ListResp list(String access_token)
-
-    FindByUserResp findByUser(String access_token, FindByUserReq findByUserReq)
-
-    ChangeResp change(String access_token, ChangeReq changeReq)
-
-    BatchChangeResp batchChange(String access_token, BatchChangeReq batchChangeReq)
-
-    static class BatchChangeReq extends BaseReq {
-
-        List<String> openid_list
-
-        String to_groupid
-    }
-
-    static class BatchChangeResp extends BaseResp {
-    }
-
-    static class ChangeReq {
-        String openid
-        String to_groupid
-    }
-
-    static class ChangeResp extends BaseResp {
-    }
-
-    static class FindByUserReq {
-        String openid
-    }
-
-    static class FindByUserResp extends BaseResp {
-        String groupid
-    }
-
-
-    static class ListResp extends BaseResp {
-        List<Group> groups
-
-        static class Group {
-            String id
-            String name
-            int count
-        }
-    }
-
-    static class DelReq {
-        Group group
-
-        static class Group {
-            String id
-        }
-    }
-
-    static class DelResp extends BaseResp {}
+    // ----------------------------------------------
+    CreateResp create(
+            String access_token,
+            CreateReq createReq
+    )
 
     static class CreateReq {
         Group group
@@ -101,6 +45,11 @@ interface UserGroupApi extends WxMpApi {
         }
     }
 
+    // ----------------------------------------------
+    UpdateResp update(
+            String access_token,
+            UpdateReq createReq
+    )
 
     static class UpdateReq {
         Group group
@@ -111,6 +60,82 @@ interface UserGroupApi extends WxMpApi {
         }
     }
 
-    static class UpdateResp extends BaseResp {}
+    static class UpdateResp extends BaseResp {
+    }
+
+    // ----------------------------------------------
+    DelResp del(
+            String access_token,
+            DelReq delReq
+    )
+
+    static class DelReq {
+        Group group
+
+        static class Group {
+            String id
+        }
+    }
+
+    static class DelResp extends BaseResp {}
+
+    // ----------------------------------------------
+    ListResp list(
+            String access_token
+    )
+
+    static class ListResp extends BaseResp {
+        List<Group> groups
+
+        static class Group {
+            String id
+            String name
+            int count
+        }
+    }
+
+    // ----------------------------------------------
+    FindByUserResp findByUser(
+            String access_token,
+            FindByUserReq findByUserReq
+    )
+
+    static class FindByUserReq {
+        String openid
+    }
+
+    static class FindByUserResp extends BaseResp {
+        String groupid
+    }
+
+    // ----------------------------------------------
+    ChangeResp change(
+            String access_token,
+            ChangeReq changeReq
+    )
+
+    static class ChangeReq {
+        String openid
+        String to_groupid
+    }
+
+    static class ChangeResp extends BaseResp {
+    }
+
+    // ----------------------------------------------
+    BatchChangeResp batchChange(
+            String access_token,
+            BatchChangeReq batchChangeReq
+    )
+
+    static class BatchChangeReq extends BaseReq {
+
+        List<String> openid_list
+
+        String to_groupid
+    }
+
+    static class BatchChangeResp extends BaseResp {
+    }
 
 }

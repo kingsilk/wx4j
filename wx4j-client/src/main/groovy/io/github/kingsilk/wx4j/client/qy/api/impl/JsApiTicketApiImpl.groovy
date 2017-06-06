@@ -23,7 +23,7 @@ class JsApiTicketApiImpl implements JsApiTicketApi {
     @Override
     GetTicketResp getTicket(String access_token) {
 
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_getTicket)
+        URI uri = UriComponentsBuilder.fromHttpUrl(API_URL_getTicket)
                 .queryParam('access_token', access_token)
                 .build()
                 .encode("UTF-8")

@@ -11,9 +11,9 @@ import io.github.kingsilk.wx4j.client.com.WxComApi.BaseResp
 @CompileStatic
 interface AppApi extends WxComApi {
 
-    String API_URI_info = "https://api.weixin.qq.com/cgi-bin/component/api_get_authorizer_info"
-    String API_URI_getOption = "https://api.weixin.qq.com/cgi-bin/component/ api_get_authorizer_option"
-    String API_URI_setOption = "https://api.weixin.qq.com/cgi-bin/component/ api_set_authorizer_option"
+    String API_URL_info = "https://api.weixin.qq.com/cgi-bin/component/api_get_authorizer_info"
+    String API_URL_getOption = "https://api.weixin.qq.com/cgi-bin/component/api_get_authorizer_option"
+    String API_URL_setOption = "https://api.weixin.qq.com/cgi-bin/component/api_set_authorizer_option"
 
     /** 获取授权方的帐号基本信息 */
     InfoResp info(

@@ -11,9 +11,10 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface QuotaApi extends WxMpApi {
 
-    String API_URI_clear = "https://api.weixin.qq.com/cgi-bin/clear_quota"
+    final String API_URL_clear = "https://api.weixin.qq.com/cgi-bin/clear_quota"
 
 
+    // ----------------------------------------------
     ClearResp clear(
             String access_token,
             String secret

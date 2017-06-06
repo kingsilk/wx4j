@@ -1,6 +1,7 @@
 package io.github.kingsilk.wx4j.client.mp.api.impl
 
 import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi
+import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi.GetTicketResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert
@@ -10,10 +11,14 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class JsApiTicketApiImpl implements JsApiTicketApi {
+class JsApiTicketApiImpl extends AbstractWxMpApi implements JsApiTicketApi {
 
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            getTicket: API_URL_getTicket
+    ])
 
     JsApiTicketApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate
@@ -22,7 +27,8 @@ class JsApiTicketApiImpl implements JsApiTicketApi {
     @Override
     GetTicketResp getTicket(String access_token) {
 
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_getTicket)
+        String apiUrl = getApiUrl("getTicket")
+        URI uri = UriComponentsBuilder.fromHttpUrl(getApiUrl(apiUrl))
                 .queryParam('access_token', access_token)
                 .queryParam('type', "jsapi")
                 .build()

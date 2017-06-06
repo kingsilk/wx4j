@@ -22,6 +22,7 @@ interface WxComApi extends WxApi {
             return JsonOutput.toJson(this)
         }
     }
+
     /**
      *
      */

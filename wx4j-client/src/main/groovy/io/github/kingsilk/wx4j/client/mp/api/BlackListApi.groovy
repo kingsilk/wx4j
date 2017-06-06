@@ -11,9 +11,9 @@ import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 @CompileStatic
 interface BlackListApi extends WxMpApi {
 
-    String API_URI_list = "https://api.weixin.qq.com/cgi-bin/tags/members/getblacklist"
-    String API_URI_black = "https://api.weixin.qq.com/cgi-bin/tags/members/batchblacklist"
-    String API_URI_unblack = "https://api.weixin.qq.com/cgi-bin/tags/members/batchunblacklist"
+    final String API_URL_list = "https://api.weixin.qq.com/cgi-bin/tags/members/getblacklist"
+    final String API_URL_black = "https://api.weixin.qq.com/cgi-bin/tags/members/batchblacklist"
+    final String API_URL_unblack = "https://api.weixin.qq.com/cgi-bin/tags/members/batchunblacklist"
 
     // ----------------------------------------------
     /**

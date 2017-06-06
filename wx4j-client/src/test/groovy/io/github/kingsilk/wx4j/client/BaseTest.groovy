@@ -1,17 +1,13 @@
-package io.github.btpka3.wx4j.mp
+package io.github.kingsilk.wx4j.client
 
-import io.github.kingsilk.wx4j.mp.api.AppAtApi
-import io.github.kingsilk.wx4j.mp.api.JsApiTicketApi
-import io.github.kingsilk.wx4j.mp.api.SnsUserApi
-import io.github.kingsilk.wx4j.mp.api.UserAtApi
-import io.github.btpka3.wx4j.mp.util.UtProps
-import io.github.btpka3.wx4j.mp.util.UtUtils
+import io.github.kingsilk.wx4j.client.mp.api.*
+import io.github.kingsilk.wx4j.client.util.UtProps
+import io.github.kingsilk.wx4j.client.util.UtUtils
 import org.junit.runner.RunWith
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
 /**
@@ -31,12 +27,9 @@ abstract class BaseTest {
     @Autowired
     UtProps utProps
 
-
     @Autowired
     UtUtils utUtils
 
-    @Autowired
-    AppAtApi appAtApi
 
     @Autowired
     JsApiTicketApi jsApiTicketApi
@@ -50,7 +43,7 @@ abstract class BaseTest {
 //    @LocalServerPort
 //    int port;
 
-    TestRestTemplate restTemplate = new TestRestTemplate(TestRestTemplate.HttpClientOption.ENABLE_COOKIES)
+//    TestRestTemplate restTemplate = new TestRestTemplate(TestRestTemplate.HttpClientOption.ENABLE_COOKIES)
 //    @Autowired
 //    TestRestTemplate wwwRestTemplate
 

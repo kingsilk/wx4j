@@ -9,7 +9,7 @@ import io.github.kingsilk.wx4j.client.com.WxComApi
 @CompileStatic
 interface QuotaApi extends WxComApi {
 
-    String API_URI_clear = "https://api.weixin.qq.com/cgi-bin/component/clear_quota"
+    String API_URL_clear = "https://api.weixin.qq.com/cgi-bin/component/clear_quota"
 
     /** 清零 第三方平台 的 quota */
     ClearResp clear(String component_access_token, ClearResp clearReq)

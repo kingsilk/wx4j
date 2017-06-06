@@ -1,7 +1,7 @@
-package io.github.btpka3.wx4j.mp.api.impl
+package io.github.kingsilk.wx4j.client.mp.impl
 
-import io.github.btpka3.wx4j.mp.BaseTest
-import io.github.kingsilk.wx4j.mp.api.SnsUserApi.InfoResp
+import io.github.kingsilk.wx4j.client.BaseTest
+import io.github.kingsilk.wx4j.client.mp.api.SnsUserApi.InfoResp
 import org.junit.Test
 
 import static org.assertj.core.api.Assertions.assertThat

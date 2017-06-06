@@ -1,6 +1,7 @@
 package io.github.kingsilk.wx4j.client.mp.api.impl
 
 import io.github.kingsilk.wx4j.client.mp.api.AppAtApi
+import io.github.kingsilk.wx4j.client.mp.api.AppAtApi.GetAppAtResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert
@@ -10,19 +11,28 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class AppAtApiImpl implements AppAtApi {
+class AppAtApiImpl extends AbstractWxMpApi implements AppAtApi {
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            getAppAt: API_URL_getAppAt
+    ])
 
     AppAtApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate
     }
 
-    @Override
-    GetAppAtResp getAppAt(String appid, String secret) {
 
+    @Override
+    GetAppAtResp getAppAt(
+            String appid,
+            String secret
+    ) {
+
+        String apiUrl = getApiUrl("getAppAt")
         // client_credential
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_getAppAt)
+        URI uri = UriComponentsBuilder.fromHttpUrl(getApiUrl(apiUrl))
                 .queryParam('grant_type', "client_credential")
                 .queryParam('appid', appid)
                 .queryParam('secret', secret)

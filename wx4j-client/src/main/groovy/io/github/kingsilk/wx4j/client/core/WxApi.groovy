@@ -4,5 +4,10 @@ package io.github.kingsilk.wx4j.client.core
  *
  */
 interface WxApi {
-    //String getApiUrl()
+
+    void setApiUrls(Map<String, String> apiUrls)
+
+    Map<String, String> getDefaultApiUrls()
+
+    String getApiUrl(String apiName)
 }

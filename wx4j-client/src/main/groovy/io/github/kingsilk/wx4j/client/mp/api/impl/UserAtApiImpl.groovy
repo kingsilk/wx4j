@@ -13,14 +13,20 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class UserAtApiImpl implements UserAtApi {
+class UserAtApiImpl extends AbstractWxMpApi implements UserAtApi {
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            createUserAuthUrl: API_URL_createUserAuthUrl,
+            isValid          : API_URL_isValid,
+            refresh          : API_URL_refresh,
+            getUserAt        : API_URL_getUserAt
+    ])
 
     UserAtApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate
     }
-
 
     @Override
     String createUserAuthUrl(
@@ -30,7 +36,9 @@ class UserAtApiImpl implements UserAtApi {
             String scope,
             String state
     ) {
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URL_createAuthUrl)
+
+        String apiUrl = getApiUrl("isValid")
+        URI uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
                 .queryParam('appid', appid)
                 .queryParam('redirect_uri', redirect_uri)
                 .queryParam('response_type', "code")
@@ -46,7 +54,8 @@ class UserAtApiImpl implements UserAtApi {
     @Override
     IsValidResp isValid(String access_token, String openid) {
 
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_isValid)
+        String apiUrl = getApiUrl("isValid")
+        URI uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
                 .queryParam('access_token', access_token)
                 .queryParam('openid', openid)
                 .build()
@@ -67,14 +76,15 @@ class UserAtApiImpl implements UserAtApi {
         return resp
     }
 
+
     @Override
     RefreshResp refresh(
             String appid,
-//            String grant_type,
             String refresh_token
     ) {
 
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_refresh)
+        String apiUrl = getApiUrl("refresh")
+        URI uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
                 .queryParam('appid', appid)
                 .queryParam('grant_type', "refresh_token")
                 .queryParam('refresh_token', refresh_token)
@@ -97,21 +107,16 @@ class UserAtApiImpl implements UserAtApi {
 
     /**
      * 通过 code 换取用户级别的 access token。
-     *
-     * @param appid
-     * @param secret
-     * @param code
-     * @param grant_type
-     * @return
      */
     @Override
     GetUserAtResp getUserAt(
             String appid,
             String secret,
             String code
-//            String grant_type
     ) {
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_getUserAt)
+
+        String apiUrl = getApiUrl("getUserAt")
+        URI uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
                 .queryParam('appid', appid)
                 .queryParam('secret', secret)
                 .queryParam('code', code)

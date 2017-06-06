@@ -11,8 +11,7 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface AppAtApi extends WxMpApi {
 
-    String API_URI_getAppAt = "https://api.weixin.qq.com/cgi-bin/token"
-
+    final String API_URL_getAppAt = "https://api.weixin.qq.com/cgi-bin/token"
 
     // ----------------------------------------------
     GetAppAtResp getAppAt(

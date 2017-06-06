@@ -11,7 +11,7 @@ import io.github.kingsilk.wx4j.client.pay.WxPayApi.BaseResp
 @CompileStatic
 interface BillApi extends WxMpApi {
 
-    String API_URI_download = "https://api.mch.weixin.qq.com/pay/downloadbill"
+    String API_URL_download = "https://api.mch.weixin.qq.com/pay/downloadbill"
 
     // ----------------------------------------------
 

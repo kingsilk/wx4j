@@ -11,29 +11,22 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface UserAtApi extends WxMpApi {
 
-    static final String API_URL_createAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
-
-    static final String API_URI_isValid = "https://api.weixin.qq.com/sns/auth"
-
-    static final String API_URI_getUserAt = "https://api.weixin.qq.com/sns/oauth2/access_token"
-
-    static final String API_URI_refresh = "https://api.weixin.qq.com/sns/oauth2/refresh_token"
+    final String API_URL_createUserAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
+    final String API_URL_isValid = "https://api.weixin.qq.com/sns/auth"
+    final String API_URL_getUserAt = "https://api.weixin.qq.com/sns/oauth2/access_token"
+    final String API_URL_refresh = "https://api.weixin.qq.com/sns/oauth2/refresh_token"
 
     /**
      *
-     * @param appid
-     * @param redirect_uri
      * @param scope 应用授权作用域。
-     *      snsapi_base  - 不弹出授权页面，直接跳转，只能获取用户openid
+     *      snsapi_base     - 不弹出授权页面，直接跳转，只能获取用户openid
      *      snsapi_userinfo - 会弹出授权页面，可通过openid拿到昵称、性别、所在地。无需用户关注微信公众号
      *
      * @param state 最多128字节
-     * @return
      */
     String createUserAuthUrl(
             String appid,
             String redirect_uri,
-//            String response_type,
             String scope,
             String state
     )
@@ -45,25 +38,16 @@ interface UserAtApi extends WxMpApi {
 
     RefreshResp refresh(
             String appid,
-//            String grant_type,
             String refresh_token
     )
 
     /**
      * 通过 code 换取用户级别的 access token。
-     *
-     * @param appid
-     * @param secret
-     * @param code
-     * @param grant_type
-     * @return
      */
-    // grant_type = "authorization_code"
     GetUserAtResp getUserAt(
             String appid,
             String secret,
-            String code//,
-//            String grant_type
+            String code
     )
 
 

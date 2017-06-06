@@ -1,6 +1,7 @@
 package io.github.kingsilk.wx4j.client.mp.api.impl
 
 import io.github.kingsilk.wx4j.client.mp.api.SnsUserApi
+import io.github.kingsilk.wx4j.client.mp.api.SnsUserApi.InfoResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert
@@ -10,10 +11,14 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class SnsUserApiImpl implements SnsUserApi {
+class SnsUserApiImpl extends AbstractWxMpApi implements SnsUserApi {
 
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            info: API_URL_info
+    ])
 
     SnsUserApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate
@@ -22,7 +27,8 @@ class SnsUserApiImpl implements SnsUserApi {
     @Override
     InfoResp info(String access_token, String openid, String lang) {
 
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URI_info)
+        String apiUrl = getApiUrl("info")
+        URI uri = UriComponentsBuilder.fromHttpUrl(getApiUrl(apiUrl))
                 .queryParam('access_token', access_token)
                 .queryParam('openid', openid)
                 .queryParam('lang', lang)

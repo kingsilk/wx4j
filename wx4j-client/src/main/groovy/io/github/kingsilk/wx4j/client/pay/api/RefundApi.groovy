@@ -11,8 +11,8 @@ import io.github.kingsilk.wx4j.client.pay.WxPayApi.BaseResp
 @CompileStatic
 interface RefundApi extends WxMpApi {
 
-    String API_URI_refund = "https://api.mch.weixin.qq.com/secapi/pay/refund"
-    String API_URI_query = "https://api.mch.weixin.qq.com/pay/refundquery"
+    String API_URL_refund = "https://api.mch.weixin.qq.com/secapi/pay/refund"
+    String API_URL_query = "https://api.mch.weixin.qq.com/pay/refundquery"
 
     // ----------------------------------------------
 

@@ -10,8 +10,9 @@ import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 @CompileStatic
 interface ReplyApi extends WxMpApi {
 
-    String API_URI_curInfo = "https://api.weixin.qq.com/cgi-bin/get_current_autoreply_info"
+    final String API_URL_curInfo = "https://api.weixin.qq.com/cgi-bin/get_current_autoreply_info"
 
+    // ----------------------------------------------
     /**
      * 获取公众号的自动回复规则
      *
@@ -41,7 +42,7 @@ interface ReplyApi extends WxMpApi {
         /**
          * 关注后自动回复的信息
          */
-        AddFriendAutoReplyInfo  add_friend_autoreply_info
+        AddFriendAutoReplyInfo add_friend_autoreply_info
 
         /**
          * 消息自动回复的信息
@@ -98,7 +99,7 @@ interface ReplyApi extends WxMpApi {
                  */
                 List<KeywordListInfo> keyword_list_info
 
-              List<ReplyListInfo>  reply_list_info
+                List<ReplyListInfo> reply_list_info
 
                 public static class KeywordListInfo {
                     String type
@@ -123,7 +124,7 @@ interface ReplyApi extends WxMpApi {
                     public static class NewsInfo {
 
                         List<News> list
-                        public static  class News {
+                        public static class News {
 
                             /**
                              * 图文消息的标题

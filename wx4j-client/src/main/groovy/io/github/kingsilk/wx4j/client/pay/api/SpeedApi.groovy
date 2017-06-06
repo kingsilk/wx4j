@@ -11,7 +11,7 @@ import io.github.kingsilk.wx4j.client.pay.WxPayApi.BaseResp
 @CompileStatic
 interface SpeedApi extends WxMpApi {
 
-    String API_URI_report = "https://api.mch.weixin.qq.com/payitil/report"
+    String API_URL_report = "https://api.mch.weixin.qq.com/payitil/report"
 
     // ----------------------------------------------
 

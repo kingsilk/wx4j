@@ -12,10 +12,13 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface KfMsgApi extends WxMpApi {
 
-    String API_URI_send = "https://api.weixin.qq.com/cgi-bin/message/custom/send"
+    final String API_URL_send = "https://api.weixin.qq.com/cgi-bin/message/custom/send"
 
-
-    SendResp send(String access_token, SendReq sendReq)
+    // ----------------------------------------------
+    SendResp send(
+            String access_token,
+            SendReq sendReq
+    )
 
 
     static class SendResp extends BaseResp {

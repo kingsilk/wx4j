@@ -11,9 +11,9 @@ import io.github.kingsilk.wx4j.client.com.WxComApi.BaseResp
 @CompileStatic
 interface AppAtApi extends WxComApi {
 
-    String API_URI_preAuth = "https://api.weixin.qq.com/cgi-bin/component/api_create_preauthcode"
-    String API_URI_createAppAuthUrl = "https://mp.weixin.qq.com/cgi-bin/componentloginpage"
-    String API_URI_getAppAt = "https://api.weixin.qq.com/cgi-bin/component/api_query_auth"
+    String API_URL_preAuth = "https://api.weixin.qq.com/cgi-bin/component/api_create_preauthcode"
+    String API_URL_createAppAuthUrl = "https://mp.weixin.qq.com/cgi-bin/componentloginpage"
+    String API_URL_getAppAt = "https://api.weixin.qq.com/cgi-bin/component/api_query_auth"
 
     /** 获取预授权码 */
     PreAuthResp preAuth(

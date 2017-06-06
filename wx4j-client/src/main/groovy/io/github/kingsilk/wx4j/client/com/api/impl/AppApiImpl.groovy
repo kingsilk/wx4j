@@ -31,7 +31,7 @@ class AppApiImpl implements AppApi {
     ) {
 
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_info)
+                .fromHttpUrl(API_URL_info)
                 .queryParam("component_access_token", component_access_token)
                 .build()
                 .encode("UTF-8")
@@ -67,7 +67,7 @@ class AppApiImpl implements AppApi {
             GetOptionReq getOptionReq
     ) {
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_getOption)
+                .fromHttpUrl(API_URL_getOption)
                 .queryParam("component_access_token", component_access_token)
                 .build()
                 .encode("UTF-8")
@@ -103,7 +103,7 @@ class AppApiImpl implements AppApi {
             SetOptionReq setOptionReq
     ) {
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_setOption)
+                .fromHttpUrl(API_URL_setOption)
                 .queryParam("component_access_token", component_access_token)
                 .build()
                 .encode("UTF-8")

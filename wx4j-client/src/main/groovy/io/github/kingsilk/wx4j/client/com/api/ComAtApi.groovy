@@ -12,7 +12,7 @@ import io.github.kingsilk.wx4j.client.com.WxComApi.BaseResp
 interface ComAtApi extends WxComApi {
 
 
-    String API_URI_getComAt = "https://api.weixin.qq.com/cgi-bin/component/api_component_token"
+    String API_URL_getComAt = "https://api.weixin.qq.com/cgi-bin/component/api_component_token"
 
     /**
      *

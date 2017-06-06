@@ -11,13 +11,20 @@ import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 @CompileStatic
 interface UserApi extends WxMpApi {
 
-    String API_URI_list = "https://api.weixin.qq.com/cgi-bin/user/get"
-    String API_URI_info = "https://api.weixin.qq.com/cgi-bin/user/info"
-    String API_URI_infos = "https://api.weixin.qq.com/cgi-bin/user/info/batchget"
-    String API_URI_remark = "https://api.weixin.qq.com/cgi-bin/user/info/updateremark"
+    final String API_URL_list = "https://api.weixin.qq.com/cgi-bin/user/get"
+    final String API_URL_info = "https://api.weixin.qq.com/cgi-bin/user/info"
+    final String API_URL_infos = "https://api.weixin.qq.com/cgi-bin/user/info/batchget"
+    final String API_URL_remark = "https://api.weixin.qq.com/cgi-bin/user/info/updateremark"
 
-    // next_openid : 第一个拉取的OPENID，不填默认从头开始拉取
-    ListResp list(String access_token, String next_openid)
+    // ----------------------------------------------
+    /**
+     *
+     * @param next_openid 第一个拉取的OPENID，不填默认从头开始拉取
+     */
+    ListResp list(
+            String access_token,
+            String next_openid
+    )
 
     static class ListResp extends BaseResp {
 
@@ -269,7 +276,6 @@ interface UserApi extends WxMpApi {
             String access_token,
             RemarkReq remarkReq
     )
-
 
     static class RemarkReq extends BaseReq {
         String openid

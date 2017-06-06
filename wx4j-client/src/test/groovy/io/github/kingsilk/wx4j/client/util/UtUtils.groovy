@@ -1,13 +1,13 @@
-package io.github.btpka3.wx4j.mp.util
+package io.github.kingsilk.wx4j.client.util
 
 import groovy.json.JsonOutput
 import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
-import io.github.kingsilk.wx4j.mp.api.AppAtApi
-import io.github.kingsilk.wx4j.mp.api.AppAtApi.GetAppAtResp
-import io.github.kingsilk.wx4j.mp.api.JsApiTicketApi
-import io.github.kingsilk.wx4j.mp.api.JsApiTicketApi.GetTicketResp
-import io.github.kingsilk.wx4j.mp.api.UserAtApi
+import io.github.kingsilk.wx4j.client.mp.api.AppAtApi
+import io.github.kingsilk.wx4j.client.mp.api.AppAtApi.GetAppAtResp
+import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi
+import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi.GetTicketResp
+import io.github.kingsilk.wx4j.client.mp.api.UserAtApi
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.event.*
 import org.springframework.stereotype.Component

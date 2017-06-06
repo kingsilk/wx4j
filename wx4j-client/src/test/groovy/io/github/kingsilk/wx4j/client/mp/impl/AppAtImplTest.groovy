@@ -1,8 +1,10 @@
-package io.github.btpka3.wx4j.mp.api.impl
+package io.github.kingsilk.wx4j.client.mp.impl
 
-import io.github.btpka3.wx4j.mp.BaseTest
-import io.github.kingsilk.wx4j.mp.api.AppAtApi
+import io.github.kingsilk.wx4j.client.BaseTest
+import io.github.kingsilk.wx4j.client.mp.api.AppAtApi
+import io.github.kingsilk.wx4j.client.mp.api.AppAtApi.GetAppAtResp
 import org.junit.Test
+import org.springframework.beans.factory.annotation.Autowired
 
 import static org.assertj.core.api.Assertions.assertThat
 
@@ -11,13 +13,15 @@ import static org.assertj.core.api.Assertions.assertThat
  */
 class AppAtImplTest extends BaseTest {
 
+    @Autowired
+    AppAtApi appAtApi
 
     @Test
     void getAppAt01() {
         String appId = utProps.wx.wxTest2.appId
         String appSecret = utProps.wx.wxTest2.appSecret
 
-        AppAtApi.GetAppAtResp resp = appAtApi.getAppAt(appId, appSecret)
+        GetAppAtResp resp = appAtApi.getAppAt(appId, appSecret)
 
         log.debug("resp = " + resp)
         assertThat(resp).isNotNull()

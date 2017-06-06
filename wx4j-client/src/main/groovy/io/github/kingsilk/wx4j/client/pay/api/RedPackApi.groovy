@@ -11,9 +11,9 @@ import io.github.kingsilk.wx4j.client.pay.WxPayApi.BaseResp
  */
 interface RedPackApi extends WxPayApi {
 
-    String API_URI_sendPlain = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack"
-    String API_URI_sendGroup = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendgroupredpack"
-    String API_URI_info = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo"
+    String API_URL_sendPlain = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack"
+    String API_URL_sendGroup = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendgroupredpack"
+    String API_URL_info = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo"
 
     // ----------------------------------------------
 

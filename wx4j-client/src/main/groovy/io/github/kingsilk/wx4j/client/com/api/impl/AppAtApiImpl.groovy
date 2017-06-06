@@ -29,7 +29,7 @@ class AppAtApiImpl implements AppAtApi {
     ) {
 
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_preAuth)
+                .fromHttpUrl(API_URL_preAuth)
                 .queryParam("component_access_token", component_access_token)
                 .build()
                 .encode("UTF-8")
@@ -65,7 +65,7 @@ class AppAtApiImpl implements AppAtApi {
             String redirect_uri
     ) {
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_createAppAuthUrl)
+                .fromHttpUrl(API_URL_createAppAuthUrl)
                 .queryParam("component_appid", component_appid)
                 .queryParam("pre_auth_code", pre_auth_code)
                 .queryParam("redirect_uri", redirect_uri)
@@ -82,7 +82,7 @@ class AppAtApiImpl implements AppAtApi {
     ) {
 
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_getAppAt)
+                .fromHttpUrl(API_URL_getAppAt)
                 .queryParam("component_access_token", component_access_token)
                 .build()
                 .encode("UTF-8")

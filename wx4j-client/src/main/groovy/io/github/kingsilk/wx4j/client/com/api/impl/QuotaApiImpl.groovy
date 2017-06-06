@@ -22,7 +22,7 @@ class QuotaApiImpl implements QuotaApi {
     ClearResp clear(String component_access_token, ClearResp clearReq) {
 
         URI uri = UriComponentsBuilder
-                .fromHttpUrl(API_URI_clear)
+                .fromHttpUrl(API_URL_clear)
                 .queryParam("component_access_token", component_access_token)
                 .build()
                 .encode("UTF-8")

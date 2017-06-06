@@ -11,15 +11,15 @@ import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 @CompileStatic
 interface UserTagApi extends WxMpApi {
 
-    String API_URI_create = "https://api.weixin.qq.com/cgi-bin/tags/create"
-    String API_URI_list = "https://api.weixin.qq.com/cgi-bin/tags/get"
-    String API_URI_update = "https://api.weixin.qq.com/cgi-bin/tags/update"
-    String API_URI_del = "https://api.weixin.qq.com/cgi-bin/tags/delete"
+    final String API_URL_create = "https://api.weixin.qq.com/cgi-bin/tags/create"
+    final String API_URL_list = "https://api.weixin.qq.com/cgi-bin/tags/get"
+    final String API_URL_update = "https://api.weixin.qq.com/cgi-bin/tags/update"
+    final String API_URL_del = "https://api.weixin.qq.com/cgi-bin/tags/delete"
 
-    String API_URI_getUserByTag = "https://api.weixin.qq.com/cgi-bin/user/tag/get"
-    String API_URI_tagUser = "https://api.weixin.qq.com/cgi-bin/tags/members/batchtagging"
-    String API_URI_untagUser = "https://api.weixin.qq.com/cgi-bin/tags/members/batchuntagging"
-    String API_URI_getTagByUser = "https://api.weixin.qq.com/cgi-bin/tags/getidlist"
+    final String API_URL_getUserByTag = "https://api.weixin.qq.com/cgi-bin/user/tag/get"
+    final String API_URL_tagUser = "https://api.weixin.qq.com/cgi-bin/tags/members/batchtagging"
+    final String API_URL_untagUser = "https://api.weixin.qq.com/cgi-bin/tags/members/batchuntagging"
+    final String API_URL_getTagByUser = "https://api.weixin.qq.com/cgi-bin/tags/getidlist"
 
     // ----------------------------------------------
     CreateResp create(
