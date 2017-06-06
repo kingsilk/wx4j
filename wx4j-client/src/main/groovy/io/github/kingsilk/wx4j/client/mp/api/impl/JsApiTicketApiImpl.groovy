@@ -1,5 +1,6 @@
 package io.github.kingsilk.wx4j.client.mp.api.impl
 
+import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi
 import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi.GetTicketResp
 import org.springframework.http.HttpStatus
@@ -11,6 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
+@CompileStatic
 class JsApiTicketApiImpl extends AbstractWxMpApi implements JsApiTicketApi {
 
 

@@ -1,5 +1,6 @@
 package io.github.kingsilk.wx4j.client.com.api.impl
 
+import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.com.api.AppAtApi
 import io.github.kingsilk.wx4j.client.com.api.AppAtApi.GetAppAtReq
 import io.github.kingsilk.wx4j.client.com.api.AppAtApi.GetAppAtResp
@@ -13,9 +14,16 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class AppAtApiImpl implements AppAtApi {
+@CompileStatic
+class AppAtApiImpl extends AbstractWxComApi implements AppAtApi {
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            preAuth         : API_URL_preAuth,
+            createAppAuthUrl: API_URL_createAppAuthUrl,
+            getAppAt        : API_URL_getAppAt
+    ])
 
     AppAtApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate

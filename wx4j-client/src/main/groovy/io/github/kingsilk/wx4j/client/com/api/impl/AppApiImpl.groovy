@@ -1,5 +1,6 @@
 package io.github.kingsilk.wx4j.client.com.api.impl
 
+import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.com.api.AppApi
 import io.github.kingsilk.wx4j.client.com.api.AppApi.GetOptionReq
 import io.github.kingsilk.wx4j.client.com.api.AppApi.GetOptionResp
@@ -15,9 +16,16 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class AppApiImpl implements AppApi {
+@CompileStatic
+class AppApiImpl extends AbstractWxComApi implements AppApi {
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            info     : API_URL_info,
+            getOption: API_URL_getOption,
+            setOption: API_URL_setOption
+    ])
 
     AppApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate

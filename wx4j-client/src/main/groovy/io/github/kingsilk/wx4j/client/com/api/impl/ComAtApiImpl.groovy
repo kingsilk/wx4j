@@ -1,5 +1,6 @@
 package io.github.kingsilk.wx4j.client.com.api.impl
 
+import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.com.api.ComAtApi
 import io.github.kingsilk.wx4j.client.com.api.ComAtApi.GetComAtReq
 import io.github.kingsilk.wx4j.client.com.api.ComAtApi.GetComAtResp
@@ -11,9 +12,14 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
-class ComAtApiImpl implements ComAtApi {
+@CompileStatic
+class ComAtApiImpl extends AbstractWxComApi implements ComAtApi {
 
     RestOperations restTemplate
+
+    final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
+            getComAt: API_URL_getComAt
+    ])
 
     ComAtApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate

@@ -1,5 +1,6 @@
 package io.github.kingsilk.wx4j.client.mp.api.impl
 
+import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.api.UserAtApi
 import io.github.kingsilk.wx4j.client.mp.api.UserAtApi.GetUserAtResp
 import io.github.kingsilk.wx4j.client.mp.api.UserAtApi.IsValidResp
@@ -13,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
+@CompileStatic
 class UserAtApiImpl extends AbstractWxMpApi implements UserAtApi {
 
     RestOperations restTemplate
@@ -32,7 +34,6 @@ class UserAtApiImpl extends AbstractWxMpApi implements UserAtApi {
     String createUserAuthUrl(
             String appid,
             String redirect_uri,
-//            String response_type,
             String scope,
             String state
     ) {

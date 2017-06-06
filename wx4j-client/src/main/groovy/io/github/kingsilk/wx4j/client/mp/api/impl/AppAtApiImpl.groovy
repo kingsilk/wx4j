@@ -1,5 +1,6 @@
 package io.github.kingsilk.wx4j.client.mp.api.impl
 
+import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.api.AppAtApi
 import io.github.kingsilk.wx4j.client.mp.api.AppAtApi.GetAppAtResp
 import org.springframework.http.HttpStatus
@@ -11,6 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder
 /**
  *
  */
+@CompileStatic
 class AppAtApiImpl extends AbstractWxMpApi implements AppAtApi {
 
     RestOperations restTemplate

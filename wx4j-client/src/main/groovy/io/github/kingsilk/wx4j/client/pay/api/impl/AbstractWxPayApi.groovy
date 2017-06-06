@@ -1,14 +1,14 @@
-package io.github.kingsilk.wx4j.client.mp.api.impl
+package io.github.kingsilk.wx4j.client.pay.api.impl
 
 import groovy.transform.CompileStatic
-import io.github.kingsilk.wx4j.client.mp.WxMpApi
+import io.github.kingsilk.wx4j.client.pay.WxPayApi
 import org.springframework.util.Assert
 
 /**
  *
  */
 @CompileStatic
-abstract class AbstractWxMpApi implements WxMpApi {
+abstract class AbstractWxPayApi implements WxPayApi {
 
     Map<String, String> apiUrls
 
@@ -30,5 +30,4 @@ abstract class AbstractWxMpApi implements WxMpApi {
         Assert.isTrue(apiUrl as boolean, "`API ${apiName}` 的 url 未正确配置")
         return apiUrl
     }
-
 }
