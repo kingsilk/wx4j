@@ -1,15 +1,18 @@
 package io.github.kingsilk.wx4j.broker.api
 
-import io.github.kingsilk.wx4j.broker.api.model.WxComResiterResp
-
 /**
  *
  */
-
 interface WxCom {
 
+    // ----------------------------------------------
+    /**
+     * 注册
+     */
+    WxComResiterResp register(
+    )
 
-    WxComResiterResp register()
-
+    static class WxComResiterResp {
+    }
 
 }

@@ -3,7 +3,7 @@ package io.github.kingsilk.wx4j.broker.server.store.mongo.domain
 import org.springframework.data.mongodb.core.mapping.DBRef
 
 /**
- *
+ * 微信开发者平台账号
  */
 class WxDev extends Base {
 

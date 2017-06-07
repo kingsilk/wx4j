@@ -1,13 +1,13 @@
-package io.github.kingsilk.wx4j.client.qy
+package io.github.kingsilk.wx4j.client.suite
 
 import groovy.json.JsonOutput
 import io.github.kingsilk.wx4j.client.core.WxApi
 import org.springframework.util.Assert;
 
 /**
- * 微信企业号相关API。
+ * 微信企业号 SaaS 套件接口
  */
-interface WxQyApi extends WxApi {
+interface WxSuiteApi extends WxApi {
 
     /**
      *
@@ -15,6 +15,7 @@ interface WxQyApi extends WxApi {
     abstract class BaseReq implements Serializable {
 
         public static final long serialVersionUID = 1L
+
 
         @Override
         String toString() {

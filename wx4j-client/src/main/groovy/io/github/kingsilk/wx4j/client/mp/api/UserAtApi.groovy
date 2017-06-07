@@ -11,12 +11,33 @@ import static WxMpApi.BaseResp
 @CompileStatic
 interface UserAtApi extends WxMpApi {
 
-    final String API_URL_createUserAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
+    final String API_URL_createAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
+    final String API_URL_createScanAuthUrl = "https://open.weixin.qq.com/connect/qrconnect"
     final String API_URL_isValid = "https://api.weixin.qq.com/sns/auth"
     final String API_URL_getUserAt = "https://api.weixin.qq.com/sns/oauth2/access_token"
     final String API_URL_refresh = "https://api.weixin.qq.com/sns/oauth2/refresh_token"
 
+    // ----------------------------------------------
     /**
+     * 在微信APP以外，通过微信扫码登录相关API
+     *
+     * @param scope 应用授权作用域。
+     *      snsapi_base     - 不弹出授权页面，直接跳转，只能获取用户openid
+     *      snsapi_userinfo - 会弹出授权页面，可通过openid拿到昵称、性别、所在地。无需用户关注微信公众号
+     *      snsapi_login    -
+     *
+     * @param state 最多128字节
+     */
+    String createScanAuthUrl(
+            String appid,
+            String redirect_uri,
+            String scope,
+            String state
+    )
+
+    // ----------------------------------------------
+    /**
+     * 在微信APP内部，通过用户点击授权按钮登录。
      *
      * @param scope 应用授权作用域。
      *      snsapi_base     - 不弹出授权页面，直接跳转，只能获取用户openid
@@ -24,32 +45,27 @@ interface UserAtApi extends WxMpApi {
      *
      * @param state 最多128字节
      */
-    String createUserAuthUrl(
+    String createAuthUrl(
             String appid,
             String redirect_uri,
             String scope,
             String state
     )
 
+    // ----------------------------------------------
     IsValidResp isValid(
             String access_token,
             String openid
     )
 
+    static class IsValidResp extends BaseResp {
+    }
+
+    // ----------------------------------------------
     RefreshResp refresh(
             String appid,
             String refresh_token
     )
-
-    /**
-     * 通过 code 换取用户级别的 access token。
-     */
-    GetUserAtResp getUserAt(
-            String appid,
-            String secret,
-            String code
-    )
-
 
     static class RefreshResp extends BaseResp {
         /**
@@ -78,9 +94,15 @@ interface UserAtApi extends WxMpApi {
         String scope
     }
 
-    static class IsValidResp extends BaseResp {
-    }
-
+    // ----------------------------------------------
+    /**
+     * 通过 code 换取用户级别的 access token。
+     */
+    GetUserAtResp getUserAt(
+            String appid,
+            String secret,
+            String code
+    )
 
     static class GetUserAtResp extends BaseResp {
         String access_token
@@ -90,9 +112,4 @@ interface UserAtApi extends WxMpApi {
         String scope
     }
 
-    static class Resp {
-
-        String access_token
-
-    }
 }

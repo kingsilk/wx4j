@@ -4,15 +4,17 @@ import io.github.kingsilk.wx4j.client.qy.WxQyApi
 import io.github.kingsilk.wx4j.client.qy.WxQyApi.BaseResp
 
 /**
- *
+ * 在微信APP内部登录时，认证授权相关API。
  */
 interface UserAtApi extends WxQyApi {
 
-    String API_URL_createAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
+    final String API_URL_createAuthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize"
+    final String API_URL_getUserAt = "https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo"
 
-    String API_URL_getUserAt = "https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo"
-
-
+    // ----------------------------------------------
+    /**
+     * 企业获取code
+     */
     String createAuthUrl(
             String appid,
             String redirect_uri,
@@ -22,6 +24,11 @@ interface UserAtApi extends WxQyApi {
             String state
     )
 
+    // ----------------------------------------------
+
+    /**
+     * 根据code获取成员信息
+     */
     GetUserAtResp getUserAt(
             String access_token,
             String code

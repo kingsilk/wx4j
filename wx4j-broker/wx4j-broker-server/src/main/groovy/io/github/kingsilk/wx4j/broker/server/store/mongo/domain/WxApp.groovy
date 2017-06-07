@@ -196,6 +196,51 @@ class WxApp extends Base {
 
     }
 
+    /**
+     * 微信号类型。
+     */
+    public static enum WxAppTypeEnum {
+
+        /** 微信移动应用 */
+        APP,
+
+        /** 微信网站应用 */
+                WEB,
+
+        /** 微信订阅号 */
+                DYH,
+
+        /** 微信服务号 */
+                FWH,
+
+        /** 微信企业号 */
+                QYH,
+
+        /** 微信小程序 */
+                XCX,
+
+        /** 微信测试号 */
+                TEST,
+
+        /**
+         * 微信公众号第三方平台
+         *
+         * 微信·开放平台 -> 管理中心 -> 公众号第三方平台 ： 列表中的单个 "公众号第三方平台" 信息。
+         * <p>
+         * https://open.weixin.qq.com
+         * <p>
+         * https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1453779503&token=&lang=zh_CN
+         */
+                COM,
+
+        /**
+         * 微信企业号第三方服务
+         *
+         * https://qy.weixin.qq.com/app
+         */
+                CORP
+    }
+
     // ------------------------ 自动生成的 getter、 setter
 
 

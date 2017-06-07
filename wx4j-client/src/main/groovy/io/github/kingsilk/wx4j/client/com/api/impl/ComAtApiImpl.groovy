@@ -26,8 +26,9 @@ class ComAtApiImpl extends AbstractWxComApi implements ComAtApi {
     }
 
     @Override
-    GetComAtResp getComAt(GetComAtReq getComAtReq) {
-
+    GetComAtResp getComAt(
+            GetComAtReq getComAtReq
+    ) {
 
         URI uri = UriComponentsBuilder
                 .fromHttpUrl(API_URL_getComAt)

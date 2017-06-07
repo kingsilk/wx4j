@@ -20,25 +20,48 @@ class UserAtApiImpl extends AbstractWxMpApi implements UserAtApi {
     RestOperations restTemplate
 
     final Map<String, String> defaultApiUrls = Collections.unmodifiableMap([
-            createUserAuthUrl: API_URL_createUserAuthUrl,
-            isValid          : API_URL_isValid,
-            refresh          : API_URL_refresh,
-            getUserAt        : API_URL_getUserAt
+            createUserScanAuthUrl: API_URL_createScanAuthUrl,
+            createUserAuthUrl    : API_URL_createAuthUrl,
+            isValid              : API_URL_isValid,
+            refresh              : API_URL_refresh,
+            getUserAt            : API_URL_getUserAt
     ])
 
     UserAtApiImpl(RestOperations restTemplate) {
         this.restTemplate = restTemplate
     }
 
+
     @Override
-    String createUserAuthUrl(
+    String createScanAuthUrl(
+            String appid,
+            String redirect_uri,
+            String scope,
+            String state
+    ) {
+        String apiUrl = getApiUrl("createUserScanAuthUrl")
+        URI uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
+                .queryParam('appid', appid)
+                .queryParam('redirect_uri', redirect_uri)
+                .queryParam('response_type', "code")
+                .queryParam('scope', scope)
+                .queryParam('state', state)
+                .build()
+                .encode("UTF-8")
+                .toUri()
+
+        return uri.toString()
+    }
+
+    @Override
+    String createAuthUrl(
             String appid,
             String redirect_uri,
             String scope,
             String state
     ) {
 
-        String apiUrl = getApiUrl("isValid")
+        String apiUrl = getApiUrl("createUserAuthUrl")
         URI uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
                 .queryParam('appid', appid)
                 .queryParam('redirect_uri', redirect_uri)
