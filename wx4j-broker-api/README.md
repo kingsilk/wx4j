@@ -15,3 +15,15 @@
     1. 获取指定用户在 指定 微信应用 的 用户级别的 AccessToken
 
 
+
+
+参考 mohsen1/multi-file-swagger-example @ github
+
+```bash
+npm i 
+node resolve.js
+
+
+./definitions/      # 共通的 model 定义
+
+```

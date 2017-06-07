@@ -1,12 +1,12 @@
 rootProject.name = 'wx4j'
 
-include ':wx4j-broker:wx4j-broker-api'
+include 'wx4j-broker-api'
 //project(":wx4j-broker/wx4j-broker-api").name = "wx4j-broker-api"
 
-include ':wx4j-broker:wx4j-broker-server'
+include 'wx4j-broker-server'
 //project(":wx4j-broker/wx4j-broker-server").name = "wx4j-broker-server"
 
-include ':wx4j-broker:wx4j-broker-client'
+include 'wx4j-broker-client'
 //project(":wx4j-broker/wx4j-broker-client").name = "wx4j-broker-client"
 
 include 'wx4j-client'
