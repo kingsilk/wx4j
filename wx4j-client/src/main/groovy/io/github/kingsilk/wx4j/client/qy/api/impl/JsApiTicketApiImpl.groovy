@@ -2,6 +2,7 @@ package io.github.kingsilk.wx4j.client.qy.api.impl
 
 import io.github.kingsilk.wx4j.client.qy.api.JsApiTicketApi
 import io.github.kingsilk.wx4j.client.qy.api.JsApiTicketApi.GetTicketResp
+import io.github.kingsilk.wx4j.client.qy.api.JsApiTicketApi.GetWxCardTicketResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert
@@ -44,5 +45,10 @@ class JsApiTicketApiImpl extends AbstractWxYqApi implements JsApiTicketApi {
         resp.check()
 
         return resp
+    }
+
+    @Override
+    GetWxCardTicketResp getWxCardTicket(String access_token) {
+        return null
     }
 }

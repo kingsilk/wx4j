@@ -2,10 +2,9 @@ package io.github.kingsilk.wx4j.client.mp.api
 
 import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.WxMpApi
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseReq
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 import org.springframework.core.io.Resource
-
-import static WxMpApi.BaseReq
-import static WxMpApi.BaseResp
 
 /**
  * 客服帐号管理

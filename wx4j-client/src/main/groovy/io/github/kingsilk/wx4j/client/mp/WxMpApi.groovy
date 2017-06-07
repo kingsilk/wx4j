@@ -9,7 +9,7 @@ import org.springframework.util.Assert;
  */
 interface WxMpApi extends WxApi {
 
-    static abstract class BaseReq implements Serializable {
+    public static abstract class BaseReq implements Serializable {
 
         public static final long serialVersionUID = 1L
 
@@ -19,7 +19,7 @@ interface WxMpApi extends WxApi {
         }
     }
 
-    static abstract class BaseResp implements Serializable {
+    public static abstract class BaseResp implements Serializable {
 
         public static final long serialVersionUID = 1L
 

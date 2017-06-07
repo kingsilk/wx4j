@@ -6,7 +6,6 @@ import org.junit.Test
 
 import static org.assertj.core.api.Assertions.assertThat
 
-//import static io.github.btpka3.wx4j.mp.api.JsApiTicketApi.GetTicketResp
 /**
  *
  */

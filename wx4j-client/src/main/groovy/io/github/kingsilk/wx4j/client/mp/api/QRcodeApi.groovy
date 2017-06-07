@@ -2,9 +2,8 @@ package io.github.kingsilk.wx4j.client.mp.api
 
 import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.WxMpApi
-
-import static WxMpApi.BaseReq
-import static WxMpApi.BaseResp
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseReq
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 
 /**
  * 创建二维码ticket

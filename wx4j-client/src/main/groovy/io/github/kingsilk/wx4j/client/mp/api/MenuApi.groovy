@@ -3,8 +3,7 @@ package io.github.kingsilk.wx4j.client.mp.api
 import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.WxMpApi
 import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseReq
-
-import static WxMpApi.BaseResp
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 
 /**
  * 自定义菜单

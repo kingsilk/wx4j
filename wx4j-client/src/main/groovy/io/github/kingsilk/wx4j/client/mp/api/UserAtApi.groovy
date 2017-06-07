@@ -2,8 +2,7 @@ package io.github.kingsilk.wx4j.client.mp.api
 
 import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.WxMpApi
-
-import static WxMpApi.BaseResp
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 
 /**
  * 获取 用户授权的 access_token

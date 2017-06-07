@@ -1,8 +1,7 @@
 package io.github.kingsilk.wx4j.client.mp.api
 
 import io.github.kingsilk.wx4j.client.mp.WxMpApi
-
-import static WxMpApi.BaseResp
+import io.github.kingsilk.wx4j.client.mp.WxMpApi.BaseResp
 
 /**
  *
