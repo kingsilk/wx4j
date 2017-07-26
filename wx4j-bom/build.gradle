@@ -25,7 +25,10 @@ publishing {
 
              pom.withXml(){
                  asString().setLength(0)
-                 asString().append(file('pom.xml').text.replaceAll(~/\$\{aaa\}/, "123456"))
+                 asString().append(file('pom.xml').text
+                         .replaceAll(~/\$\{aaa\}/, "123456")
+                         .replaceAll(~/\$\{version\}/, project.version)
+                 )
              }
 
 //            pom.withXml {

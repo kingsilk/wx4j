@@ -3,6 +3,7 @@ package io.github.kingsilk.wx4j.client.mp.api.impl
 import groovy.transform.CompileStatic
 import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi
 import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi.GetTicketResp
+import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi.GetWxCardTicketResp
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.util.Assert
@@ -49,5 +50,10 @@ class JsApiTicketApiImpl extends AbstractWxMpApi implements JsApiTicketApi {
         resp.check()
 
         return resp
+    }
+
+    @Override
+    GetWxCardTicketResp getWxCardTicket(String access_token) {
+        return null
     }
 }
