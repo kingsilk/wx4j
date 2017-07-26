@@ -43,6 +43,9 @@ allprojects {
         }
     }
     dependencyManagement {
+        generatedPomCustomization {
+            enabled = false
+        }
         dependencies {
             dependency('joda-time:joda-time:2.9.7')
             dependency('com.querydsl:querydsl-apt:4.1.4')
@@ -124,7 +127,7 @@ subprojects {
 
     }
 
-    task sourcesJar(type: Jar ) {
+    task sourcesJar(type: Jar) {
         classifier = 'sources'
 //        from sourceSets.main.allJava
         from sourceSets.main.allSource
@@ -184,7 +187,7 @@ subprojects {
                     username "admin"
                     password "admin123"
                 }
-                if(project.version.endsWith('-SNAPSHOT')) {
+                if (project.version.endsWith('-SNAPSHOT')) {
                     url "http://mvn.kingsilk.xyz/content/repositories/snapshots/"
                 } else {
                     url "http://mvn.kingsilk.xyz/content/repositories/releases/"
@@ -192,8 +195,6 @@ subprojects {
             }
         }
     }
-
-
 
 //    model {
 //        tasks.generatePomFileForMavenCustomPublication {

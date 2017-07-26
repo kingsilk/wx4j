@@ -1,0 +1,91 @@
+dependencyManagement {
+    generatedPomCustomization {
+        enabled = false
+    }
+}
+configurations.archives.artifacts.clear()
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifacts.clear()
+
+//            artifacts {
+//                archives(file('pom.xml')) {
+//                    name 'my-artifact'
+//                    type 'text'
+//
+//                    builtBy "aaa"
+//
+//                    extension "pom"
+//                }
+//            }
+
+//            artifact(source: file('pom.xml'), extension: 'pom' )
+
+             pom.withXml(){
+                 asString().setLength(0)
+                 asString().append(file('pom.xml').text.replaceAll(~/\$\{aaa\}/, "123456"))
+             }
+
+//            pom.withXml {
+//                asNode().children().last() + {
+//
+//                    def d = delegate
+//
+//                    d.dependencyManagement {
+//                        d.dependencies {
+//                            parent.subprojects.sort { "$it.name" }.each { p ->
+//                                if (p != project) {
+//                                    d.dependency {
+//                                        d.groupId(p.group)
+//                                        d.artifactId(p.name)
+//                                        d.version(p.version)
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+
+//                pom.withXml {
+//                    asNode().children().last() + {
+//                        delegate.dependencyManagement {
+//                            delegate.dependencies {
+//
+//                                println "======= "+ parent.subprojects
+//                                parent.subprojects.sort { "$it.name" }.each { p ->
+//                                    if (  p != project) {
+//                                        delegate.dependency {
+//                                            delegate.groupId(p.group)
+//                                            delegate.artifactId(p.name)
+//                                            delegate.version(p.version)
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+
+//                pom.withXml {
+//                    asNode().appendNode('description',
+//                            'A demonstration of maven POM customization')
+//                }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+            if (project.version.endsWith('-SNAPSHOT')) {
+                url "http://mvn.kingsilk.xyz/content/repositories/snapshots/"
+            } else {
+                url "http://mvn.kingsilk.xyz/content/repositories/releases/"
+            }
+        }
+    }
+}

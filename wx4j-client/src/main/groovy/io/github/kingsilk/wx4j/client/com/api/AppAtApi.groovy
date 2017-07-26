@@ -17,6 +17,7 @@ interface AppAtApi extends WxComApi {
 
     /** 获取预授权码 */
     PreAuthResp preAuth(
+            // jax-RS 2.0
             String component_access_token,
             PreAuthReq preAuthReq
     )

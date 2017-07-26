@@ -1,8 +1,10 @@
 package io.github.kingsilk.wx4j.client.mp.impl
 
 import io.github.kingsilk.wx4j.client.BaseTest
+import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi
 import io.github.kingsilk.wx4j.client.mp.api.JsApiTicketApi.GetTicketResp
 import org.junit.Test
+import org.springframework.beans.factory.annotation.Autowired
 
 import static org.assertj.core.api.Assertions.assertThat
 
@@ -11,6 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat
  */
 class JsApiTicketApiImplTest extends BaseTest {
 
+    @Autowired
+    JsApiTicketApi jsApiTicketApi
 
     @Test
     void getTicket01() {

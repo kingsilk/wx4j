@@ -10,4 +10,5 @@ include 'wx4j-broker-client'
 //project(":wx4j-broker/wx4j-broker-client").name = "wx4j-broker-client"
 
 include 'wx4j-client'
+include 'wx4j-bom'
 

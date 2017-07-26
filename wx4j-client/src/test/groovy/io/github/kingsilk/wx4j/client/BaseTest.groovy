@@ -32,9 +32,6 @@ abstract class BaseTest {
 
 
     @Autowired
-    JsApiTicketApi jsApiTicketApi
-
-    @Autowired
     SnsUserApi snsUserApi
 
     @Autowired
